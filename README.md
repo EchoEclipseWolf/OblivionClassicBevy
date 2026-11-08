@@ -1,3 +1,5 @@
+# Contributions are welcome
+
 # Oblivion Classic Bevy
 
 An in-progress recreation of *The Elder Scrolls IV: Oblivion* in Rust, using Bevy. The project aims to reproduce the original game's behavior while replacing its Windows-era platform and rendering interfaces with a modern host, starting on Linux and Windows.
