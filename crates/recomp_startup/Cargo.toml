@@ -1,0 +1,12 @@
+[package]
+name = "recomp_startup"
+version = "0.1.0"
+edition = "2024"
+
+[dev-dependencies]
+flate2.workspace = true
+
+[dependencies]
+bevy_ecs.workspace = true
+recomp_core.workspace = true
+recomp_game.workspace = true

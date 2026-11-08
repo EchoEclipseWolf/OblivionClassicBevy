@@ -1,0 +1,3 @@
+# The game data, as the C++ build's OBLIVION_DATA_DIR cache variable. An environment variable of the same name wins.
+[env]
+OBLIVION_DATA_DIR = { value = "../OblivionRecomp/Data", relative = true }

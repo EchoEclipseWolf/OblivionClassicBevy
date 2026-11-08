@@ -1,0 +1,8 @@
+{
+  "bodies": 47,
+  "calls": 1224,
+  "blocks": 1605,
+  "indirect_calls": 123,
+  "dependencies": 597,
+  "uncaptured_dependencies": 550
+}

@@ -1,0 +1,769 @@
+{
+ "groups": [
+  {
+   "class": "counted",
+   "decision": "counted under another name",
+   "note": "The body behind a counted caller, with no address literal of its own.",
+   "auto": "missing",
+   "addresses": [
+    [
+     "0080B190",
+     "`unported_shader_setup` in sky_shader.rs:227, a closure the driver and the test give; counted as `shader_setups_not_run`, 1 in C++ and Rust. It is reached through a vtable, so no literal."
+    ],
+    [
+     "00445BEE",
+     "`count(0x00B42D78)`: the same g_gameTimeCallback call, named by its global (tes_grid.rs:1775)."
+    ]
+   ]
+  },
+  {
+   "class": "stop",
+   "decision": "same stop, other address",
+   "note": "The Rust stop for this arm carries a different address or wording.",
+   "auto": "missing",
+   "addresses": [
+    [
+     "00417220",
+     "004172AA in forms_magic.rs:398."
+    ],
+    [
+     "0041D4D9",
+     "The `find_setting` ok_or at forms_magic.rs:1042."
+    ],
+    [
+     "0041FB00",
+     "004F6745 in ai_conditions.rs:300, the caller."
+    ],
+    [
+     "00453987",
+     "00453986 in data_handler_world.rs:680."
+    ],
+    [
+     "0052FE2B",
+     "0052FDD3 in forms_dialogue.rs:312."
+    ],
+    [
+     "005E58C0",
+     "005E58C5 in ai_conditions.rs:534."
+    ],
+    [
+     "005F10E8",
+     "005F10F1. The Rust narrows it: the C++ stops on any non-Low process, the exe's vt+0x2C0 only when +0x1FC bit 0x800 is set (ai_package.rs:316)."
+    ],
+    [
+     "005F1107",
+     "005F10F1 in ai_package.rs:323, the same swimming ring; carried in P16."
+    ],
+    [
+     "00519DA7",
+     "00519DAE and 00519E5C."
+    ],
+    [
+     "00488442",
+     "00488481 in inventory.rs:463."
+    ],
+    [
+     "0056703C",
+     "00566F1A or 005670FD in ai_package.rs."
+    ],
+    [
+     "0065A48E",
+     "0065A49F in actor.rs:484: only a nonzero +0x120 stops; carried in P16 as the furniture arm."
+    ],
+    [
+     "004D9BEE",
+     "004E0FCD in forms_references.rs:558."
+    ]
+   ]
+  },
+  {
+   "class": "ported",
+   "decision": "C++ stop, Rust ports the arm",
+   "note": "The Rust goes further than the C++ here, which is allowed; the arm has code in the Rust function named.",
+   "auto": "missing",
+   "addresses": [
+    [
+     "00425D0D",
+     "XPSL: load_package_start, base_extra_list.rs:635."
+    ],
+    [
+     "00436C33",
+     "The Reexport warning, model_loader.rs:1372."
+    ],
+    [
+     "0045B6D5",
+     "+0x04 change map, tes.rs:363."
+    ],
+    [
+     "0045B745",
+     "+0x04 change map, tes.rs:354."
+    ],
+    [
+     "004676F6",
+     "forms_init.rs:556."
+    ],
+    [
+     "0046D5D9",
+     "ai_package.rs:617."
+    ],
+    [
+     "00480A3C",
+     "00B34400 is the palette, model_loader.rs:1185. The C++ names it wrongly."
+    ],
+    [
+     "004CE3FB",
+     "004C4C00 then 004BFDC0, forms_world.rs:2275."
+    ],
+    [
+     "004CED1D",
+     "world_remove_reference, ai_cell_moves.rs:187."
+    ],
+    [
+     "004CED4F",
+     "cell_set_altered, ai_cell_moves.rs:199."
+    ],
+    [
+     "004D4372",
+     "00451460, data_handler_world.rs:977."
+    ],
+    [
+     "004D8ABE",
+     "vt+0x500 arm of 004D8AA0, forms_references.rs:227."
+    ],
+    [
+     "004D8ACF",
+     "As 004D8ABE."
+    ],
+    [
+     "004D9BB6",
+     "The bit 2 keep, forms_references.rs:541."
+    ],
+    [
+     "004DD578",
+     "ai_cell_moves.rs:406."
+    ],
+    [
+     "004DD707",
+     "ai_cell_moves.rs:380."
+    ],
+    [
+     "004E7537",
+     "The gate is ported and PGRI..PGRR go to 004E65B0, forms_world.rs:2362."
+    ],
+    [
+     "004F64FA",
+     "ai_conditions.rs:564."
+    ],
+    [
+     "004F7FF2",
+     "ai_conditions.rs:829."
+    ],
+    [
+     "004FA1A5",
+     "The miss warns at 4FA179 and answers 0.0, ai_conditions.rs:319."
+    ],
+    [
+     "00519A09",
+     "CSDF, forms_actors.rs:1048."
+    ],
+    [
+     "0051D540",
+     "Base vt+0x128, ai_process.rs:222."
+    ],
+    [
+     "0052EE84",
+     "forms_init.rs:1789."
+    ],
+    [
+     "00567472",
+     "The warning text, ai_package.rs:308."
+    ],
+    [
+     "005690C8",
+     "00567280, ai_package.rs:911."
+    ],
+    [
+     "005692A8",
+     "follower_remove, ai_package.rs:871."
+    ],
+    [
+     "0056A0A0",
+     "forms_ai.rs:836."
+    ],
+    [
+     "0056A970",
+     "forms_ai.rs:55 and 86."
+    ],
+    [
+     "005E66E4",
+     "forms_init_world.rs:476."
+    ],
+    [
+     "005F1A42",
+     "ai_process.rs:476."
+    ],
+    [
+     "00649377",
+     "Both arms return false, ai_process.rs:1043."
+    ],
+    [
+     "0065A356",
+     "The +0x318 store, forms_references.rs:227."
+    ],
+    [
+     "0065FBBE",
+     "The Rust has only the constructor's call of 0065FBB0, where no list exists yet (player.rs:624)."
+    ],
+    [
+     "004C9FC0",
+     "The editor ID store, forms_world.rs:636."
+    ],
+    [
+     "00667676",
+     "The region block is ported, with inner counts 0065B5C0, 0043DF10, 00543200, 005A64B0, 0065E860 (player.rs:903)."
+    ],
+    [
+     "006677AF",
+     "Ported, player.rs:903."
+    ],
+    [
+     "00424180",
+     "An interior's type 2 extra is read directly, tes_grid.rs:559."
+    ],
+    [
+     "00483750",
+     "Ported inside recenter_distant, tes_grid.rs:465."
+    ]
+   ]
+  },
+  {
+   "class": "ported",
+   "decision": "C++ stop, warning arm ported",
+   "note": "The C++ `unreached_warning` stops where the exe warns through 004A7A60. The Rust emits that warning and goes on, as the exe does (forms_init.rs, forms_init_world.rs).",
+   "auto": "missing",
+   "addresses": [
+    "004262E1",
+    "0042630E",
+    "00426313",
+    "0042636A",
+    "00426544",
+    "00426587",
+    "0042669A",
+    "0042B74A",
+    "0042B7F5",
+    "00467762",
+    "004695FA",
+    "00469D3A",
+    "00469D5D",
+    "0046A8D7",
+    "0046A929",
+    "0046D0B5",
+    "0046E25B",
+    "0046E52B",
+    "0046E70F",
+    "0046FC6C",
+    "0048AE6E",
+    "0048F8D1",
+    "004AE886",
+    "004AF9C8",
+    "004AFA4F",
+    "004B0CF5",
+    "004B3DA9",
+    "004B4C44",
+    "004B5C84",
+    "004B631C",
+    "004B638C",
+    "004B6E3E",
+    "004C9031",
+    "004CDA22",
+    "004ED8A8",
+    "004ED926",
+    "004F2C6F",
+    "004F2D0B",
+    "004F2DA7",
+    "004FBC41",
+    "0051CFDB",
+    "0052B387",
+    "0052B3B4",
+    "0052BA8D",
+    "0052BB4F",
+    "0052EF0B",
+    "005314D0",
+    "0056959B",
+    "0056AF88",
+    "0056B42A"
+   ]
+  },
+  {
+   "class": "ported",
+   "decision": "C++ host guard, no boundary",
+   "note": "A C++ check for a missing service, a null global or a wrong class. Rust's types remove the state, or an Err at another address or an expect holds it. No game state sits behind it.",
+   "auto": "missing",
+   "addresses": [
+    "0042CB3D",
+    "0042CD4A",
+    "00431D60",
+    "004394C6",
+    "004394DE",
+    "0043E78E",
+    "00441DC5",
+    "00442980",
+    "0044329E",
+    "004432B6",
+    "004432E1",
+    "00444F16",
+    "0044593A",
+    "00447146",
+    "00447303",
+    "004476C0",
+    "00447710",
+    "004478E7",
+    "00447CB7",
+    "00447CDB",
+    "0044D982",
+    "0044E03D",
+    "0044E3F2",
+    "0044E4BA",
+    "00450D0B",
+    "00451189",
+    "00451490",
+    "004514B2",
+    "004520F0",
+    "00469CB0",
+    "0046B0D0",
+    "00485DC0",
+    "0048AE30",
+    "004A33A4",
+    "004A4954",
+    "004C79F0",
+    "004CB8F3",
+    "004CBC66",
+    "004CD985",
+    "004CE434",
+    "004CEEE5",
+    "004D5E14",
+    "004EA121",
+    "004ECB5B",
+    "004EFEA6",
+    "004EFED4",
+    "004EFF5A",
+    "004F0435",
+    "004F0462",
+    "004F06B0",
+    "0053BE48",
+    "00547ED0",
+    "00567071",
+    "0056A578",
+    "0057ED73",
+    "005E66B4",
+    "00649735",
+    "007C1430",
+    "007C53FD",
+    "007D1963",
+    "007D198F",
+    "007D1A92"
+   ]
+  },
+  {
+   "class": "stop",
+   "decision": "C++ stop, Rust stops elsewhere",
+   "note": "",
+   "auto": "missing",
+   "addresses": [
+    [
+     "004520F7",
+     "No ghost file is modelled; 0046B6CE stops on a nonzero +0x04 (data_handler.rs:218)."
+    ]
+   ]
+  },
+  {
+   "class": "substitution",
+   "decision": "recorded substitution",
+   "note": "",
+   "auto": "missing",
+   "addresses": [
+    [
+     "0045211A",
+     "The host loads on one thread, so 004520F0 never clones a TESFile. The C++ stops; the Rust has no thread to clone for. Not labelled in the Rust."
+    ],
+    [
+     "004FB580",
+     "`script_event_or` is an empty const fn (ai_package.rs:869): +0x08 has no writer until the interpreter runs, which is the counted boundary. Open-items line 346 records it. The C++ stops on a nonempty list; the Rust cannot see one."
+    ],
+    [
+     "00701700",
+     "D1: NiRenderer's constructor, three critical sections and base fields, reached from 00769BE0 (run-a4-audit). The port's renderer is data with no base object or locks; `renderer_alias_b3f928` (registration.rs:1401) is the one store a later reader needs, and it's unbound."
+    ],
+    [
+     "00701B00",
+     "The global list of every NiTexture, 44 long at 004067CC and 268 at 0040F16A (run-b1-snap). Textures are entities, so a World query stands for the list. Its readers, 00407AE0 and the device reset 00774250, aren't ported; a reader must add the list's order."
+    ],
+    [
+     "0076B3F0",
+     "D1: TestCooperativeLevel, reset and the lost-device notifies, from 0076BE00 each frame (run-a4-audit). The compositor owns the device and none is ever lost, so its callbacks never run."
+    ],
+    [
+     "0077EBB0",
+     "D1: stores the renderer, the device reference and +0x8AC in 00B428B4, 00B428B0, 00B428B8. Reached from 00778F60 at startup (run-a4-audit), read by no ported code."
+    ],
+    [
+     "0071B280",
+     "A getter of g_niDefaultImageConverter, reached from 00773BA0 in the pixel format search (run-a4-audit). D1: the port's format choice has no converter object; the flag is `device_image_converter` (facegen.rs:586)."
+    ],
+    [
+     "0077F7E0",
+     "D1: stores the renderer and a device COM reference in 00B428C4, 00B428C0 for shader programs. Reached from 00778F60 at startup (run-a4-audit), read by no ported code. Must come with any shader program port."
+    ]
+   ]
+  },
+  {
+   "class": "ported",
+   "decision": "carried, ported under another entry",
+   "note": "",
+   "auto": "missing",
+   "addresses": [
+    [
+     "00440880",
+     "Reached only after 00445A72, which stops on leaving a current interior."
+    ],
+    [
+     "00447CA0",
+     "Tail-called from 00447D80; the body is forms_init_world.rs:1340."
+    ],
+    [
+     "005F10E0",
+     "ai_package.rs:316, the ring buffer a stop."
+    ],
+    [
+     "0060CDB0",
+     "The player's arm, player.rs:500; other arms a TODO (player.rs:402), reached only by a process change."
+    ],
+    [
+     "004DC270",
+     "Walked in sky_shader.rs:78's classifier; the others read host nodes."
+    ],
+    [
+     "00B3F178",
+     "paths.rs:11, a host path."
+    ],
+    [
+     "00B42D54",
+     "A field of the manager, interface_manager.rs:364."
+    ],
+    [
+     "0040EF54",
+     "The no-cell jump, the driver's own line at winmain.rs:2503."
+    ],
+    [
+     "00720B40",
+     "texture_loading.rs:1194."
+    ],
+    [
+     "00768960",
+     "movie_player.rs:3537."
+    ],
+    [
+     "00579CF0",
+     "Save header walk in save_files.rs, without the LoadingMenu call."
+    ],
+    [
+     "0045E6A0",
+     "Host save list, menus.rs:765."
+    ],
+    [
+     "0045F2E0",
+     "Host caption in save_files.rs."
+    ],
+    [
+     "004A17F0",
+     "interface_scene.rs:856: the store on each scissor shape, from 58F868 and 58B79D. The audit's search missed the unpadded address. Reached at startup (run-a4-audit)."
+    ]
+   ]
+  },
+  {
+   "class": "missing",
+   "decision": "accepted: a site label, not a boundary",
+   "note": "The carried list names a site or window edge, or a function with only outside callers. Nothing in the Rust reaches it.",
+   "auto": "missing",
+   "addresses": [
+    "0040E75E",
+    "0040EF53",
+    "0040F16E",
+    "0040F5A8",
+    "0040F5C3",
+    "00508ABD",
+    "0050A5FB",
+    "00513BB0",
+    "005792D2",
+    "005ADE42",
+    "0076142B",
+    "0042FDA0",
+    "0044FB00",
+    "0047D0C0",
+    "00682E60",
+    "006684B0",
+    "0053AD60",
+    "0055CBF0",
+    "0055CC60",
+    "00563EB0",
+    "00563F20",
+    "008BB420",
+    "00B3BAFC",
+    "00B430B4"
+   ]
+  },
+  {
+   "class": "missing",
+   "decision": "accepted: later consumer, no Rust caller",
+   "note": "A carried later-phase function that is not a stop, a counter or a substitution in the notes. No function the Rust ports calls it directly, so nothing passes it silently.",
+   "auto": "missing",
+   "addresses": [
+    "0045D920",
+    "004802E0",
+    "00497B50",
+    "00497E70",
+    "0053B0E0",
+    "0053B730",
+    "00545830",
+    "00701020",
+    "00725890",
+    "0073AB30",
+    "0073AC20",
+    "007493D0",
+    "0076A970",
+    "0076F590",
+    "00775F10",
+    "0077BFB0",
+    "0077C3D0",
+    "0077C450",
+    "0077C4D0",
+    "0077CAB0",
+    "0077EB50",
+    "007B8530",
+    "007BA2F0",
+    "007F0BC0",
+    "0095FB40",
+    "0095FDC0",
+    "0096DD40"
+   ]
+  },
+  {
+   "class": "missing",
+   "decision": "accepted: TODO in a ported caller, not reached at startup",
+   "note": "A ported caller's direct call has no code, and no stop either. Recorded by a TODO or comment. Each arm depends on a state no startup path sets: a live game sound, a resize with a renderer, a later menu.",
+   "auto": "missing",
+   "addresses": [
+    [
+     "00497BF0",
+     "WM_WINDOWPOSCHANGED, window.rs:134; 004060F0 is on the host's window path, so a resize reaches here at runtime, past the startup scope."
+    ],
+    [
+     "006B6AA0",
+     "os_globals.rs:1441: game-sound instance walks. No instance exists yet."
+    ],
+    [
+     "006B6AF0",
+     "As 006B6AA0."
+    ],
+    [
+     "006B6E60",
+     "As 006B6AA0."
+    ],
+    [
+     "006B6F20",
+     "As 006B6AA0."
+    ],
+    [
+     "006B7120",
+     "As 006B6AA0."
+    ],
+    [
+     "006B7130",
+     "As 006B6AA0."
+    ]
+   ]
+  }
+ ],
+ "named_counters": {
+  "script_runs_not_executed": {
+   "boundary": "`004FBE00` -> `00517810` / `00517330`",
+   "cpp": "1335 x64, 1335 x86 (1336 in phase12 test)",
+   "roadmap": "about 1,330",
+   "rust": "1343 at seed 1; 1334, 1336, 1347 at seeds 2, 3, 7",
+   "verdict": "Same site. Differs by 12d's leveled rolls, which feed scripted items; a declared G3 tolerance. Pinned on seed 1 by `the_binary_prints_the_g3_lines`. No original run counts it. Since the script VM these runs execute; the counter's name is older than that."
+  },
+  "reference_script_runs": {
+   "boundary": "`004D7190` -> `004FBE00`",
+   "cpp": "4153",
+   "roadmap": "4,153",
+   "rust": "4153",
+   "verdict": "Same count, same path; P13 RUN-002 `script_runs`."
+  },
+  "container_script_passes": {
+   "boundary": "`0048E740`",
+   "cpp": "967",
+   "roadmap": "967",
+   "rust": "967",
+   "verdict": "Same; RUN-002 `container`."
+  },
+  "container_item_script_runs": {
+   "boundary": "`0048E740` -> `004FBE00`",
+   "cpp": "525",
+   "roadmap": "527",
+   "rust": "follows the rolls",
+   "verdict": "Same site; rolls. Set against the stacks in `game_data_window`."
+  },
+  "script_event_runs_not_executed": {
+   "boundary": "`004F9EC0` -> `00516970` / `00517950`",
+   "cpp": "1039",
+   "roadmap": "1,039",
+   "rust": "1039",
+   "verdict": "Same count, same path. The exe also tests event list +0x08; nothing writes it until the interpreter runs. Since the script VM these runs execute; the counter's name is older than that."
+  },
+  "pathing_doors_not_registered": {
+   "boundary": "`00680090`",
+   "cpp": "5256",
+   "roadmap": "5,256",
+   "rust": "4567",
+   "verdict": "Differs, for a reason in the exe: the C++ counts every door reference. The Rust applies the first three gates: 00B3BE00 set, not the prison marker `00B35EBC`, has a teleport block. **Upper bound**: 0042B410 (a linked door), 0067F5D0 and 00680A00 aren't evaluated. No original run counts it. Pinned at 4567 by the G3 test."
+  },
+  "sky_climate_calls": {
+   "boundary": "`00543200` graphics",
+   "cpp": "1",
+   "roadmap": "counted",
+   "rust": "1",
+   "verdict": "Same."
+  },
+  "shader_setups_not_run": {
+   "boundary": "`0080B190`",
+   "cpp": "1",
+   "roadmap": "carried",
+   "rust": "1",
+   "verdict": "Same, in the `Phase-13e:` line."
+  },
+  "queued model tasks": {
+   "boundary": "11 gated (8 Havok, 3 NIF 10.2.0.0)",
+   "cpp": "11, 15 run",
+   "roadmap": "11",
+   "rust": "11, 15 run",
+   "verdict": "Same. The real exe builds them; the first reader is cell 3D."
+  },
+  "land_textures_queued": {
+   "boundary": "`004C9530` -> `0043B0D0`",
+   "cpp": "counted",
+   "roadmap": "carried",
+   "rust": "595 on (4, 7)",
+   "verdict": "Present; C++ count not logged."
+  },
+  "path_grid_points_loaded": {
+   "boundary": "`004E65B0`",
+   "cpp": "none",
+   "roadmap": "none",
+   "rust": "counted",
+   "verdict": "Rust only, no list names it."
+  },
+  "music_unported_arms": {
+   "boundary": "no address on the field; `006AB2AE..006AB2EE`",
+   "cpp": "none",
+   "roadmap": "none",
+   "rust": "counted",
+   "verdict": "Rust only, no list names it."
+  },
+  "find_file_calls": {
+   "boundary": "`004EB1A0`",
+   "cpp": "counted",
+   "roadmap": "none",
+   "rust": "counted",
+   "verdict": "A record, not a boundary."
+  }
+ },
+ "counted": {
+  "00424180": "Rust ports the read (tes_grid.rs:559).",
+  "0043DF10": "Rust only: inside the region block the C++ counts as 00667676.",
+  "0043FC20": "6th C++ site is 0044324A, a stop in Rust (tes.rs:569).",
+  "00440AF0": "Rust counts the exe's 004455B5, 00445803, 00445846, 00445C35, 004431E1; the C++ folds two.",
+  "00441E52": "Ported (tes_grid.rs:1375).",
+  "00445B73": "Ported (tes_grid.rs:1375).",
+  "00445BEE": "Named by its global: 00B42D78.",
+  "004523A0": "Second site is the driver's hook, winmain_place_player.rs:115, where C++ main.cpp had a hook.",
+  "00483750": "Ported.",
+  "00498F30": "Ported (tes_grid.rs:1335).",
+  "0049A8B0": "One helper with both callers.",
+  "004BE090": "Three lines of one arm; the C++ two.",
+  "004C5640": "The C++ repeats it in two arms of 004C79A0 that the Rust joins, and 00482310.",
+  "004C5B50": "Ported (forms_world.rs:2260); the C++ counted a function it also ported.",
+  "004D6450": "Stops instead: 00482221. Louder than the count.",
+  "004EBDA0": "One helper (tes_grid.rs:1178) for both sites.",
+  "00543200": "Rust only: 006676AE in the region block.",
+  "005A64B0": "Rust only: the region block.",
+  "0065B5C0": "Rust only: the region block.",
+  "0065E860": "Rust only: the region block.",
+  "00667676": "Ported.",
+  "006677AF": "Ported.",
+  "00707370": "Rust counts the exe's call inside 004D63A0, 004EBDA0 and others; the C++ doesn't.",
+  "00707610": "As 00707370.",
+  "00707980": "As 00707370.",
+  "007C4D90": "Rust counts 004459A2; the exe has the call, the C++ no count.",
+  "00B42D78": "See 00445BEE."
+ },
+ "paths": {
+  "00424180": "Ported, a direct read.",
+  "00441E52": "Ported.",
+  "00445B73": "Ported.",
+  "00445BEE": "Rust's 00B42D78.",
+  "00B42D78": "C++'s 00445BEE.",
+  "00483750": "Ported.",
+  "00498F30": "Ported.",
+  "004C5B50": "Ported.",
+  "004BD380": "Per distant slot. The Rust's INI gives 55 x 55 (5 + 2 x uGridDistantCount 25, 004838F0) and two clears; the C++ test's fixture has size 5.",
+  "007B3A40": "As 004BD380.",
+  "004CAFC0": "Counted per record with shapes (0049A028); the C++ fixture's records have none.",
+  "00707370": "Rust counts the exe's calls in 004D63A0; the C++ doesn't.",
+  "00707610": "As 00707370.",
+  "00707980": "As 00707370.",
+  "00440AF0": "Fresh game: 004430F0(1) skips every slot, RUN-003's reference_counts [0], so only 00444FB0's. The C++ test runs on a game the tail already filled.",
+  "004D58B0": "As 00440AF0: the C++ cells have their nodes already.",
+  "00543BB0": "The Rust path has a Sky with +0xDC; the C++ fixture doesn't.",
+  "007C4D90": "Rust counts 004459A2."
+ },
+ "callers": {
+  "00438060": "Behind 004DD92F, a stop.",
+  "00424180": "Ported read. 0065BA14 is past `0065B9xx` stops.",
+  "0043FC20": "0044325C follows the 0044324A stop; 00445371, 004454EF are past the 00445200 stop.",
+  "00440590": "In a helper: update_current_exterior_cell, tes_grid.rs:1833 (+0x30).",
+  "00444340": "Past the 00445200 stop.",
+  "00444FB0": "update_exterior_grid, tes_grid.rs:1760.",
+  "00447050": "A helper of the load (data_load.rs:150).",
+  "00485E00": "In a helper, counted.",
+  "00487E40": "container_weight's path; ported at ai_process.rs:303.",
+  "00498F30": "In update_water_surface.",
+  "00499E40": "Past the 00445200 stop.",
+  "0049A200": "Past the 00445200 stop.",
+  "0049A8B0": "In update_water_surface.",
+  "004C2230": "Stops at 004C717F.",
+  "004C4C00": "Ported; 004489F0 and 0044E266 construct through the class table.",
+  "004C9300": "Stops at 0044324A.",
+  "004C9530": "Counted by land_textures_queued.",
+  "004D58B0": "In attach_cell.",
+  "004D5BD0": "In finish_attach.",
+  "004D63A0": "In attach_cell.",
+  "004D7190": "Behind 004DD3AC, a stop.",
+  "004DD260": "In a helper, ai_process.rs:753.",
+  "004EA6E0": "Past the 00445200 stop.",
+  "004EBDA0": "lod_update.",
+  "004F9EC0": "Inside 004D5BD0's reference loop, counted per cell.",
+  "004FBE00": "In a helper, run_script, counted.",
+  "00517810": "`script_vm::run_statements` stands for 00517810 and 00517330: the runner's singleton isn't kept, since nothing nests with no command.",
+  "00537D40": "Past the 00445200 stop.",
+  "00578F60": "GameTime_QueryByMode is only named in shader_system.rs; its answer is `game_time` at the seam (00B42D78, counted).",
+  "005A64B0": "005A7932 is in 005A6DE0, past its 005A6E26 stop: the port has only the head.",
+  "005EAE70": "Behind 005FA367, a stop.",
+  "00707370": "Grid sites counted; 004D37D6 behind the 004D377D stop; startup, UI and sky sites port 00707370 in place or under the sky counter.",
+  "00707610": "As 00707370.",
+  "00707980": "As 00707370.",
+  "00889E00": "Past the 00445200 stop.",
+  "00889E10": "Past the 00445200 stop.",
+  "0088BD60": "Past the 00445200 stop.",
+  "0088D1D0": "Past the 00445200 stop."
+ }
+}
