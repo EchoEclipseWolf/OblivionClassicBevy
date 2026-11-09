@@ -19,3 +19,7 @@ Alongside Bevy, the project uses these libraries:
 - **Avian 3D** (`avian3d`) — a physics library for Bevy, included as a dependency for physics work.
 - **Rodio** — audio decoding and playback support.
 - **flate2** — decompression for game data.
+
+## Gallery
+
+![Early cell rendering](gallery/cell-rendering-phase1.png)
