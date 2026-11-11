@@ -26,7 +26,7 @@ fn scratch(name: &str) -> PathBuf {
 }
 
 fn run(arguments: &[&str], alsa: Option<&Path>) -> Output {
-    let mut command = Command::new(env!("CARGO_BIN_EXE_OblivionRecompBevy"));
+    let mut command = Command::new(env!("CARGO_BIN_EXE_oblivion"));
     command
         .env("OBLIVION_DATA_DIR", data_dir())
         .arg("--ini")

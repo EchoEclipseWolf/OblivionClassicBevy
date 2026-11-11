@@ -1,0 +1,33 @@
+#!/bin/sh
+# The placement, layering and port-ledger gates, run before every commit (user, 2026-11-11).
+# Installed by tools/git-hooks/install.sh as a shim in the shared .git/hooks, so every worktree runs its own
+# copy of this file. The gates read the working tree, not the index: commit with the tree you checked.
+# A commit that stages nothing under crates/, src/, tools/ or docs/port-ledger/ skips them.
+# `git commit --no-verify` skips the hook; AGENTS.md says when that is allowed (it isn't, for a placement failure).
+root=$(git rev-parse --show-toplevel) || exit 1
+cd "$root" || exit 1
+if ! git diff --cached --name-only | grep -q -E '^(crates|src|tools|docs/port-ledger)/'; then
+    exit 0
+fi
+failed=0
+run() {
+    script=$1
+    shift
+    [ -f "$script" ] || return 0    # an older branch's worktree without this gate
+    if ! out=$(python3 "$script" "$@" 2>&1); then
+        printf '\npre-commit: `python3 %s %s` failed:\n%s\n' "$script" "$*" "$out" >&2
+        failed=1
+    fi
+}
+run tools/placement.py check
+run tools/layering.py check
+run tools/port_ledger/generate.py --check
+if [ "$failed" -ne 0 ]; then
+    cat >&2 <<'MSG'
+
+Commit stopped. Fix a placement failure by calling the existing port or moving the function to its class's home
+(`python3 tools/placement.py where <address or name>`); don't regenerate the baseline or the exceptions.
+A stale ledger: `python3 tools/port_ledger/generate.py`, then stage docs/port-ledger.
+MSG
+    exit 1
+fi

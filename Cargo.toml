@@ -1,0 +1,55 @@
+[package]
+name = "oblivion"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+bevy.workspace = true
+oblivion_host = { path = "crates/oblivion_host" }
+oblivion_sim.workspace = true
+
+[workspace]
+members = ["crates/*"]
+resolver = "3"
+
+[workspace.dependencies]
+# IDA: N/A the plan's substitution for Havok (docs/target-a-plan-2026-11-07.md): the host's physics behind the game's seam, pinned with Bevy 0.20. Single precision, as Havok's here; cross-platform deterministic math. Nothing uses it yet.
+avian3d = { version = "0.8", default-features = false, features = ["3d", "parry-f32", "default-collider", "collider-from-mesh", "xpbd_joints", "parallel", "enhanced-determinism"] }
+# IDA: N/A `mp3` and `wav` are the plan's substitution for DirectShow and DirectSound: the decoders are rodio's pure-Rust ones.
+bevy = { version = "0.20.1", features = ["mp3", "wav"] }
+bevy_ecs = "0.20.1"
+# IDA: N/A the simulation's own App (Stage 8a): its world and schedules, with no windowing, rendering or audio.
+bevy_app = { version = "0.20.1", default-features = false, features = ["std"] }
+# IDA: N/A host tooling: the live tuning panel (`oblivion_host::tuning`), an egui inspector over registered settings.
+bevy_egui = "0.43.1"
+bevy-inspector-egui = "0.38.0"
+# IDA: N/A host tooling: the tuning file (`config/tuning.ron`).
+ron = "0.12"
+serde = { version = "1", features = ["derive"] }
+# IDA: N/A a recorded host substitution for the original's zlib 1.2.1.
+flate2 = "1"
+oblivion_core = { path = "crates/oblivion_core" }
+# IDA: N/A the path grid, its A* search and the pathing classes, ported from the exe (pathing agent, 2026-11-08).
+oblivion_pathing = { path = "crates/oblivion_pathing" }
+# IDA: N/A the same rodio `bevy_audio` already pulls in, named directly because its `Decoder` panics inside `Decodable` on bad data and sound must never crash the app: a probe rejects a bad file first.
+rodio = { version = "0.22", default-features = false, features = ["mp3", "wav"] }
+oblivion_sim = { path = "crates/oblivion_sim" }
+oblivion_testkit = { path = "crates/oblivion_testkit" }
+# IDA: N/A the Avian side of the physics seam (Build 3).
+oblivion_physics = { path = "crates/oblivion_physics" }
+
+# Profiles only take effect here in the workspace root, never in a member crate.
+
+# Our crates (the root package and crates/*) build at opt-level 1.
+[profile.dev]
+opt-level = 1
+# Line tables only: backtraces keep files and lines. Full debug info made a sibling
+# Bevy project's binary larger than this ntfs3 volume's file-size limit (about 2.8 GB),
+# and linking failed (see the same note in DragonsteadBevy/Cargo.toml).
+debug = "line-tables-only"
+
+# Every dependency builds at opt-level 3 with no debug info, to keep files small.
+# "*" matches only non-workspace packages, so it never applies to our crates.
+[profile.dev.package."*"]
+opt-level = 3
+debug = false

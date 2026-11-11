@@ -1,0 +1,8 @@
+{
+  "database": "/home/natfoth/Documents/OblivionIDA/Oblivion.exe.i64",
+  "export_date_utc": "2026-11-11",
+  "sha256": {
+    "ida_functions.csv": "a765e992f1d9708b255b486623ece0546048de5bbd7ebe17a0f5aaa232ddfba5",
+    "ida_split_chunks.csv": "445eb1f4f9405741a7700a40db546808d1aee0f480a8a8e7ea840e9f7cc40a43"
+  }
+}

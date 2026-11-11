@@ -1,17 +1,16 @@
 #!/usr/bin/env python3
-"""Generate crates/recomp_game/src/tes/form_hierarchy.rs: which RTTI classes each form type casts to.
+"""Generate crates/oblivion_sim/src/tes/forms/form_hierarchy.rs: which RTTI classes each form type casts to.
 
 Read from the evidence binary: each class's vtable -> complete object locator (vtable - 4) -> class hierarchy
 descriptor -> base class array -> type descriptors. A class that appears twice in the array is ambiguous, and
 __RTDynamicCast gives null for it, so it is left out (the rule 00466E80 relies on). Run from the repository root.
 """
-import os
 import re
 import struct
 
-EXE = os.environ.get('OBLIVION_EXE', '../OblivionBot/Oblivion.exe')
-MAP = 'crates/recomp_game/src/tes/form_type_map.rs'
-OUT = 'crates/recomp_game/src/tes/form_hierarchy.rs'
+EXE = '/run/media/natfoth/Echo/OblivionBot/Oblivion.exe'
+MAP = 'crates/oblivion_sim/src/tes/forms/form_type_map.rs'
+OUT = 'crates/oblivion_sim/src/tes/forms/form_hierarchy.rs'
 
 data = open(EXE, 'rb').read()
 pe = struct.unpack_from('<I', data, 0x3C)[0]
@@ -65,10 +64,10 @@ for form_type, name, vtable in rows:
     names[int(form_type, 16)] = name
 extra_vtables = {}
 for path, pattern, form_type, name in [
-    ('crates/recomp_game/src/tes/forms_dialogue.rs', r'TOPIC_VTABLES?: [^=]*= (?:\[)?\s*0x([0-9A-F_]+)', 0x39, 'DIAL'),
-    ('crates/recomp_game/src/tes/forms_dialogue.rs', r'INFO_VTABLES?: [^=]*= (?:\[)?\s*0x([0-9A-F_]+)', 0x3A, 'INFO'),
-    ('crates/recomp_game/src/tes/actor.rs', r'CHARACTER_VTABLES?: [^=]*= (?:\[)?\s*0x([0-9A-F_]+)', 0x32, 'ACHR'),
-    ('crates/recomp_game/src/tes/actor.rs', r'CREATURE_VTABLES?: [^=]*= (?:\[)?\s*0x([0-9A-F_]+)', 0x33, 'ACRE'),
+    ('crates/oblivion_sim/src/tes/forms/forms_dialogue.rs', r'TOPIC_VTABLES?: [^=]*= (?:\[)?\s*0x([0-9A-F_]+)', 0x39, 'DIAL'),
+    ('crates/oblivion_sim/src/tes/forms/forms_dialogue.rs', r'INFO_VTABLES?: [^=]*= (?:\[)?\s*0x([0-9A-F_]+)', 0x3A, 'INFO'),
+    ('crates/oblivion_sim/src/tes/actors/actor.rs', r'CHARACTER_VTABLES?: [^=]*= (?:\[)?\s*0x([0-9A-F_]+)', 0x32, 'ACHR'),
+    ('crates/oblivion_sim/src/tes/actors/actor.rs', r'CREATURE_VTABLES?: [^=]*= (?:\[)?\s*0x([0-9A-F_]+)', 0x33, 'ACRE'),
 ]:
     text = open(path, encoding='utf-8').read()
     match = re.search(pattern, text)

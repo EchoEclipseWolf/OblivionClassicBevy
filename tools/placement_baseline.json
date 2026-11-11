@@ -1,0 +1,1449 @@
+{
+ "ports": {
+  "00404B00": {
+   "ida": "Startup_SelectPluginsFromList",
+   "members": [
+    "crates/oblivion_sim/src/tes/winmain/path_setup.rs::original_plugins_path_overflow",
+    "crates/oblivion_sim/src/tes/winmain/plugin_selection.rs::plugins_file_name",
+    "crates/oblivion_sim/src/tes/winmain/plugin_selection.rs::select_plugins_from_list"
+   ],
+   "reason": "reviewed 2026-11-10 (batch 1): arms of one port; the host path copy is gone"
+  },
+  "00406360": {
+   "ida": "Startup_InitializeGameData",
+   "members": [
+    "crates/oblivion_sim/src/tes/winmain/initialize_game_data.rs::apply_fps_clamp",
+    "crates/oblivion_sim/src/tes/winmain/initialize_game_data.rs::begin_load_selected_files",
+    "crates/oblivion_sim/src/tes/winmain/initialize_game_data.rs::check_player_value",
+    "crates/oblivion_sim/src/tes/winmain/initialize_game_data.rs::create_tes",
+    "crates/oblivion_sim/src/tes/winmain/initialize_game_data.rs::run_load_selected_files",
+    "crates/oblivion_sim/src/tes/winmain/initialize_game_data.rs::run_player_base",
+    "crates/oblivion_sim/src/tes/winmain/initialize_game_data.rs::run_player_init",
+    "crates/oblivion_sim/src/tes/winmain/initialize_game_data.rs::run_player_window",
+    "crates/oblivion_sim/src/tes/winmain/initialize_game_data.rs::run_plugin_block",
+    "crates/oblivion_sim/src/tes/winmain/initialize_game_data.rs::run_scripts_sound_and_clamp",
+    "crates/oblivion_sim/src/tes/winmain/initialize_game_data.rs::run_sky_prelude",
+    "crates/oblivion_sim/src/tes/winmain/initialize_game_data.rs::run_tes_block",
+    "crates/oblivion_sim/src/tes/winmain/initialize_game_data.rs::run_tes_preload",
+    "crates/oblivion_sim/src/tes/winmain/initialize_game_data.rs::sky_property_of",
+    "crates/oblivion_sim/src/tes/winmain/mod.rs::game_data_tail",
+    "crates/oblivion_sim/src/tes/winmain/mod.rs::load",
+    "crates/oblivion_sim/src/tes/winmain/mod.rs::player",
+    "crates/oblivion_sim/src/tes/winmain/mod.rs::plugins",
+    "crates/oblivion_sim/src/tes/winmain/mod.rs::sky",
+    "crates/oblivion_sim/src/tes/winmain/mod.rs::tes",
+    "crates/oblivion_sim/src/tes/winmain/plugin_selection.rs::run_plugin_selection"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "0040D800": {
+   "ida": "OSGlobals_RunIdleFrame",
+   "members": [
+    "crates/oblivion_sim/src/tes/os/idle_frame.rs::idle_frame_lod_fade",
+    "crates/oblivion_sim/src/tes/os/idle_frame.rs::idle_frame_resets",
+    "crates/oblivion_sim/src/tes/os/idle_frame.rs::idle_frame_weapon_node_resets",
+    "crates/oblivion_sim/src/tes/winmain/game_frame.rs::begin",
+    "crates/oblivion_sim/src/tes/winmain/game_frame.rs::end",
+    "crates/oblivion_sim/src/tes/winmain/game_frame.rs::io_and_lod",
+    "crates/oblivion_sim/src/tes/winmain/game_frame.rs::menu_mode_frame_tail",
+    "crates/oblivion_sim/src/tes/winmain/game_frame.rs::poll_input",
+    "crates/oblivion_sim/src/tes/winmain/game_frame.rs::process_actor_frame",
+    "crates/oblivion_sim/src/tes/winmain/game_frame.rs::run_idle_frame",
+    "crates/oblivion_sim/src/tes/winmain/game_frame.rs::scripts_and_world",
+    "crates/oblivion_sim/src/tes/winmain/game_frame.rs::update_faders",
+    "crates/oblivion_sim/src/tes/winmain/game_frame.rs::update_sound",
+    "crates/oblivion_sim/src/tes/winmain/game_frame.rs::update_time"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "0040DF80": {
+   "ida": "_WinMain@16",
+   "members": [
+    "crates/oblivion_host/src/lib.rs::window_from_ini",
+    "crates/oblivion_sim/src/tes/winmain/mod.rs::activation_and_movie",
+    "crates/oblivion_sim/src/tes/winmain/mod.rs::close_loading_menu",
+    "crates/oblivion_sim/src/tes/winmain/mod.rs::create_main_menu",
+    "crates/oblivion_sim/src/tes/winmain/mod.rs::initial_area",
+    "crates/oblivion_sim/src/tes/winmain/mod.rs::interface",
+    "crates/oblivion_sim/src/tes/winmain/mod.rs::intro_sequence",
+    "crates/oblivion_sim/src/tes/winmain/mod.rs::memory_and_factories",
+    "crates/oblivion_sim/src/tes/winmain/mod.rs::path_setup",
+    "crates/oblivion_sim/src/tes/winmain/mod.rs::place_player",
+    "crates/oblivion_sim/src/tes/winmain/mod.rs::scene_graphs",
+    "crates/oblivion_sim/src/tes/winmain/mod.rs::settings_and_archives",
+    "crates/oblivion_sim/src/tes/winmain/mod.rs::starting_spell",
+    "crates/oblivion_sim/src/tes/winmain/mod.rs::window_and_renderer",
+    "crates/oblivion_sim/src/tes/winmain/mod.rs::world_setup",
+    "crates/oblivion_sim/src/tes/winmain/path_setup.rs::plan_startup_paths",
+    "crates/oblivion_sim/src/tes/winmain/path_setup.rs::prepare_startup_paths",
+    "crates/oblivion_sim/src/tes/winmain/path_setup.rs::use_my_games_from_bootstrap",
+    "crates/oblivion_sim/src/tes/winmain/winmain_initial_area.rs::grid_origin_center",
+    "crates/oblivion_sim/src/tes/winmain/winmain_memory.rs::StartupMemoryState::allocate_file_finder",
+    "crates/oblivion_sim/src/tes/winmain/winmain_memory.rs::StartupMemoryState::allocate_listener",
+    "crates/oblivion_sim/src/tes/winmain/winmain_memory.rs::StartupMemoryState::allocate_texture_palette",
+    "crates/oblivion_sim/src/tes/winmain/winmain_memory.rs::StartupMemoryState::fixed_pools",
+    "crates/oblivion_sim/src/tes/winmain/winmain_memory.rs::StartupMemoryState::initializers_dispatched",
+    "crates/oblivion_sim/src/tes/winmain/winmain_memory.rs::StartupMemoryState::install_out_of_memory_policy",
+    "crates/oblivion_sim/src/tes/winmain/winmain_memory.rs::StartupMemoryState::register_fixed_pools",
+    "crates/oblivion_sim/src/tes/winmain/winmain_memory.rs::StartupMemoryState::release_listener",
+    "crates/oblivion_sim/src/tes/winmain/winmain_memory.rs::StartupMemoryState::release_texture_palette",
+    "crates/oblivion_sim/src/tes/winmain/winmain_menu_media.rs::main_menu_title_and_logo",
+    "crates/oblivion_sim/src/tes/winmain/winmain_player_scene.rs::world_child_0",
+    "crates/oblivion_sim/src/tes/winmain/winmain_renderer.rs::register_winmain_renderer_callbacks",
+    "crates/oblivion_sim/src/tes/winmain/winmain_renderer.rs::run_winmain_renderer_block",
+    "crates/oblivion_sim/src/tes/winmain/winmain_settings.rs::load_winmain_settings",
+    "crates/oblivion_sim/src/tes/winmain/winmain_starting_spell.rs::save_player_initial_state",
+    "crates/oblivion_sim/src/tes/winmain/winmain_window.rs::activate_existing_window",
+    "crates/oblivion_sim/src/tes/winmain/winmain_window.rs::create_original_main_window",
+    "crates/oblivion_sim/src/tes/winmain/winmain_window.rs::replay_startup_activation"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "0041BB80": {
+   "ida": "MagicSystem_CreateDefaultForms",
+   "members": [
+    "crates/oblivion_sim/src/tes/forms/forms_environment.rs::create_default_effect_shaders",
+    "crates/oblivion_sim/src/tes/forms/forms_magic.rs::create_default_spells"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "0042BB90": {
+   "ida": "NiTArray_AddAtIndex",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/renderer.rs::OriginalPointerArray::add_at_index",
+    "crates/oblivion_sim/src/tes/forms/forms_items.rs::NiTArrayU32::add_at_index"
+   ],
+   "reason": "OWED: duplicate, to be merged (docs/audit/placement-audit-2026-11-10.md section 2d); not a reviewed exception"
+  },
+  "0042C970": {
+   "ida": "ArchiveManager_ApplyArchiveCacheSettings",
+   "members": [
+    "crates/oblivion_sim/src/bs/archive.rs::ArchiveManager::apply_cache_settings",
+    "crates/oblivion_sim/src/tes/forms/form_arms.rs::DataLoadHost::apply_archive_cache_settings"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "0042DB10": {
+   "ida": "ArchiveManager_FindFileEntryByType",
+   "members": [
+    "crates/oblivion_sim/src/bs/archive.rs::ArchiveManager::file_record_by_hashes",
+    "crates/oblivion_sim/src/bs/archive.rs::ArchiveManager::file_record_by_type",
+    "crates/oblivion_sim/src/bs/texture_palette.rs::archive_file_entry",
+    "crates/oblivion_sim/src/tes/forms/form_arms.rs::DataLoadHost::find_texture_entry"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "00430EF0": {
+   "ida": "BSFile_OpenCore",
+   "members": [
+    "crates/oblivion_sim/src/bs/file_finder.rs::bs_file_open_core",
+    "crates/oblivion_sim/src/tes/winmain/winmain_host.rs::SharedFiles::open_core"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "00431020": {
+   "ida": "FileFinder_FindFile",
+   "members": [
+    "crates/oblivion_sim/src/bs/file_finder.rs::FileFinder::find_file",
+    "crates/oblivion_sim/src/tes/forms/form_arms.rs::DataLoadHost::find_file",
+    "crates/oblivion_sim/src/tes/winmain/winmain_host.rs::SharedFiles::find_file"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "00431690": {
+   "ida": "BSFile_OpenAsBSFile",
+   "members": [
+    "crates/oblivion_sim/src/bs/file_finder.rs::bs_file_open_as_bs_file",
+    "crates/oblivion_sim/src/tes/forms/form_arms.rs::DataLoadHost::read_data_file"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "00431970": {
+   "ida": "FileFinder_FindMatchingFiles",
+   "members": [
+    "crates/oblivion_sim/src/bs/archive.rs::ArchiveManager::find_matching_files",
+    "crates/oblivion_sim/src/tes/forms/form_arms.rs::DataLoadHost::find_matching_files"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "00433BC0": {
+   "ida": "BSTaskManagerThread_Run",
+   "members": [
+    "crates/oblivion_sim/src/bs/model_loader.rs::ModelDrain::run_task",
+    "crates/oblivion_sim/src/bs/model_loader.rs::ModelDrain::wake",
+    "crates/oblivion_sim/src/bs/model_loader.rs::finish_io_task_tail",
+    "crates/oblivion_sim/src/bs/model_loader.rs::give_back_token",
+    "crates/oblivion_sim/src/bs/task_manager.rs::BsTaskThread::count_waited_walk_token",
+    "crates/oblivion_sim/src/bs/task_manager.rs::BsTaskThread::give_back_walk_token",
+    "crates/oblivion_sim/src/bs/task_manager.rs::BsTaskThread::try_take_walk_token",
+    "crates/oblivion_sim/src/bs/task_manager.rs::bs_task_manager_thread_run",
+    "crates/oblivion_sim/src/tes/winmain/mod.rs::model_drain"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "00434020": {
+   "ida": "IOManager_DrainTasksThroughStage",
+   "members": [
+    "crates/oblivion_sim/src/bs/model_loader.rs::clone_work",
+    "crates/oblivion_sim/src/bs/model_loader.rs::io_drain_percent",
+    "crates/oblivion_sim/src/bs/model_loader.rs::io_drain_tasks_through_stage",
+    "crates/oblivion_sim/src/bs/model_loader.rs::stage_remaining",
+    "crates/oblivion_sim/src/tes/menus/race_sex_menu.rs::race_sex_menu_drain_through_stage"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "004395D0": {
+   "ida": "QueuedModel_Finalize",
+   "members": [
+    "crates/oblivion_sim/src/bs/fade_node.rs::fade_distances",
+    "crates/oblivion_sim/src/bs/fade_node.rs::finalize_fade_root",
+    "crates/oblivion_sim/src/bs/model_loader.rs::finalize_queued_model"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "0043E680": {
+   "ida": "LockFreeCaseInsensitiveStringMap_Lookup",
+   "members": [
+    "crates/oblivion_sim/src/bs/kf_model.rs::KfMap::lookup",
+    "crates/oblivion_sim/src/bs/kf_model.rs::lower_key",
+    "crates/oblivion_sim/src/bs/model_loader.rs::lower_model_key",
+    "crates/oblivion_sim/src/bs/model_loader.rs::model_map_lookup",
+    "crates/oblivion_sim/src/bs/model_loader.rs::model_map_lookup_on"
+   ],
+   "reason": "OWED: needs design (batch 3b): one LockFreeCaseInsensitiveStringMap<T> in bs/; the exe registers the thread (TlsGetValue, 00431D60) in Lookup (0043E6D6..0043E6E3) as in Insert, so the KF side must too"
+  },
+  "0043E760": {
+   "ida": "LockFreeCaseInsensitiveStringMap_Insert",
+   "members": [
+    "crates/oblivion_sim/src/bs/kf_model.rs::KfMap::insert",
+    "crates/oblivion_sim/src/bs/model_loader.rs::insert_model"
+   ],
+   "reason": "OWED: needs design (batch 3b): one generic map; Insert registers the thread (0043E7BF..0043E7CC) and the count is the map's (LockFreeStringMap_InsertNode 0043E7F2), not the KF caller's"
+  },
+  "00441970": {
+   "ida": "TES_Constructor",
+   "members": [
+    "crates/oblivion_sim/src/bs/task_manager.rs::TaskGlobals::construct_io_manager",
+    "crates/oblivion_sim/src/bs/task_manager.rs::TaskGlobals::construct_model_loader",
+    "crates/oblivion_sim/src/tes/winmain/winmain_memory.rs::StartupMemoryState::enable_object_load_callbacks",
+    "crates/oblivion_sim/src/tes/world/tes.rs::construct_tes"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "004431F0": {
+   "ida": "TES_SetCurrentWorldspace",
+   "members": [
+    "crates/oblivion_sim/src/tes/world/tes.rs::preemptive_unload_cells",
+    "crates/oblivion_sim/src/tes/world/tes.rs::set_current_worldspace",
+    "crates/oblivion_sim/src/tes/world/tes_grid.rs::TesGridServices::set_world"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "00446C50": {
+   "ida": "NiTLargeArray_SetAt",
+   "members": [
+    "crates/oblivion_sim/src/tes/forms/forms_ai.rs::NiFormArray::set_at",
+    "crates/oblivion_sim/src/tes/forms/forms_world.rs::add_interior_cell",
+    "crates/oblivion_sim/src/tes/world/tes.rs::NiTLargeArrayU32::new",
+    "crates/oblivion_sim/src/tes/world/tes.rs::NiTLargeArrayU32::set_at"
+   ],
+   "reason": "OWED: duplicate, to be merged (docs/audit/placement-audit-2026-11-10.md section 2d); not a reviewed exception"
+  },
+  "00446CB0": {
+   "ida": "PointerList_PrependNonNull",
+   "members": [
+    "crates/oblivion_core/src/pointer_list.rs::prepend_non_null",
+    "crates/oblivion_sim/src/tes/actors/actor_process.rs::ActorList::prepend_non_null"
+   ],
+   "reason": "OWED: duplicate, to be merged (docs/audit/placement-audit-2026-11-10.md section 2d); not a reviewed exception"
+  },
+  "0044A2B0": {
+   "ida": "DataHandler_BuildFileList",
+   "members": [
+    "crates/oblivion_sim/src/tes/data/data_handler.rs::build_data_handler_file_list",
+    "crates/oblivion_sim/src/tes/data/tes_file.rs::build_tes_file_list"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "0044D950": {
+   "ida": "DataHandler_AddFormToList",
+   "members": [
+    "crates/oblivion_sim/src/tes/data/data_handler.rs::DataHandlerLists::list_for_type",
+    "crates/oblivion_sim/src/tes/data/data_load.rs::add_form_to_list"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "0044F0C0": {
+   "ida": "DataHandler_LoadFileRecords",
+   "members": [
+    "crates/oblivion_core/src/x87.rs::u32_to_x87_float",
+    "crates/oblivion_sim/src/tes/data/data_handler.rs::EditorIdMap::insert_after_cell_override",
+    "crates/oblivion_sim/src/tes/data/data_load.rs::enter_file",
+    "crates/oblivion_sim/src/tes/data/data_load.rs::leave_file",
+    "crates/oblivion_sim/src/tes/data/data_load.rs::record_percent",
+    "crates/oblivion_sim/src/tes/data/data_load.rs::save_load_record",
+    "crates/oblivion_sim/src/tes/data/data_load.rs::toft_offset_arm"
+   ],
+   "reason": "OWED: duplicate, to be merged (docs/audit/placement-audit-2026-11-10.md section 2c); not a reviewed exception"
+  },
+  "0044F3D0": {
+   "ida": "DataHandler_LoadSelectedFiles",
+   "members": [
+    "crates/oblivion_sim/src/tes/data/data_load.rs::compile_file",
+    "crates/oblivion_sim/src/tes/data/data_load.rs::load_selected_files",
+    "crates/oblivion_sim/src/tes/data/data_load.rs::run_prefix",
+    "crates/oblivion_sim/src/tes/data/post_load.rs::run_post_load_passes"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "004518B0": {
+   "ida": "TESFileData_SkipRecord",
+   "members": [
+    "crates/oblivion_sim/src/tes/data/data_handler_world.rs::next_record",
+    "crates/oblivion_sim/src/tes/data/tes_file.rs::skip_record"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "004524C0": {
+   "ida": "NiTMapBase_RemoveByKey",
+   "members": [
+    "crates/oblivion_sim/src/tes/data/save_load_game.rs::ChangeChains::remove",
+    "crates/oblivion_sim/src/tes/forms/forms_world.rs::remove"
+   ],
+   "reason": "OWED: duplicate, to be merged (docs/audit/placement-audit-2026-11-10.md section 2d); not a reviewed exception"
+  },
+  "00452570": {
+   "ida": "NiTMapUInt32UInt8_SetAt",
+   "members": [
+    "crates/oblivion_sim/src/tes/data/data_handler.rs::FormsById::set_at",
+    "crates/oblivion_sim/src/tes/forms/forms_magic.rs::EffectSettingCollection::set_at",
+    "crates/oblivion_sim/src/tes/forms/forms_world.rs::set_at"
+   ],
+   "reason": "OWED: duplicate, to be merged (docs/audit/placement-audit-2026-11-10.md section 2d); not a reviewed exception"
+  },
+  "00452600": {
+   "ida": "NiTPointerMap_NextEntry",
+   "members": [
+    "crates/oblivion_sim/src/tes/data/save_load_game.rs::ChangeChains::walk",
+    "crates/oblivion_sim/src/tes/forms/forms_ai.rs::IdleAnimRoots::walk",
+    "crates/oblivion_sim/src/tes/os/game_sounds.rs::GameSounds::walk_order"
+   ],
+   "reason": "OWED: duplicate, to be merged (docs/audit/placement-audit-2026-11-10.md section 2d); not a reviewed exception"
+  },
+  "0045A500": {
+   "ida": "TESSaveLoadGame_TestCurrentThreadActiveFlag",
+   "members": [
+    "crates/oblivion_sim/src/tes/actors/actor_process_moves.rs::save_load_active_on",
+    "crates/oblivion_sim/src/tes/data/save_load_game.rs::TesSaveLoadGame::active",
+    "crates/oblivion_sim/src/tes/forms/forms_actors.rs::save_load_active",
+    "crates/oblivion_sim/src/tes/forms/forms_references.rs::save_load_active",
+    "crates/oblivion_sim/src/tes/world/tes_grid.rs::save_load_active"
+   ],
+   "reason": "OWED: duplicate, to be merged (found 2026-11-11): one body in save_load_game.rs (TesSaveLoadGame::active) and four free functions that read the flags themselves; forms_actors.rs's answers false where the others return the error for a null g_saveLoadGame, so the merge needs the exe read first"
+  },
+  "0045D450": {
+   "ida": "TESSaveLoadGame_RebuildSaveFileList",
+   "members": [
+    "crates/oblivion_sim/src/tes/data/save_files.rs::rebuild_save_file_list",
+    "crates/oblivion_sim/src/tes/interface/tile.rs::InterfaceHost::save_file_list"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "00468FF0": {
+   "ida": "TESBipedModelForm_HasSlot",
+   "members": [
+    "crates/oblivion_sim/src/tes/actors/character_3d.rs::has_slot",
+    "crates/oblivion_sim/src/tes/forms/form_components.rs::covers"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "0046B250": {
+   "ida": "LookupFormByID",
+   "members": [
+    "crates/oblivion_sim/src/tes/forms/forms_init.rs::lookup",
+    "crates/oblivion_sim/src/tes/forms/forms_region.rs::lookup"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "0046BDA0": {
+   "ida": "TESForm_LoadDataChunk",
+   "members": [
+    "crates/oblivion_sim/src/tes/forms/form_components.rs::load_data_chunk",
+    "crates/oblivion_sim/src/tes/forms/forms_actors.rs::load_npc_data",
+    "crates/oblivion_sim/src/tes/forms/forms_items.rs::load_form_data"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "0046C2F0": {
+   "ida": "TESForm_SetFormID",
+   "members": [
+    "crates/oblivion_sim/src/tes/forms/form.rs::set_form_id",
+    "crates/oblivion_sim/src/tes/forms/form_arms.rs::reset_18_components"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "0046C640": {
+   "ida": "TESForm_SetAltered",
+   "members": [
+    "crates/oblivion_sim/src/tes/forms/form.rs::set_altered",
+    "crates/oblivion_sim/src/tes/forms/forms_misc.rs::clear_altered"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "0046C7A0": {
+   "ida": "TESFullName_LoadFULL",
+   "members": [
+    "crates/oblivion_sim/src/tes/forms/form_components.rs::load_full_name",
+    "crates/oblivion_sim/src/tes/forms/form_components.rs::load_text_or_clear",
+    "crates/oblivion_sim/src/tes/forms/forms_items.rs::full_arm"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "0046D7E0": {
+   "ida": "TESModel_Constructor",
+   "members": [
+    "crates/oblivion_sim/src/tes/forms/forms_environment.rs::new_model",
+    "crates/oblivion_sim/src/tes/forms/forms_items.rs::model",
+    "crates/oblivion_sim/src/tes/forms/forms_misc.rs::model"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "0046F020": {
+   "ida": "TESScriptableForm_ResolveScript",
+   "members": [
+    "crates/oblivion_sim/src/tes/forms/forms_init.rs::init_script",
+    "crates/oblivion_sim/src/tes/forms/forms_script.rs::resolve_script",
+    "crates/oblivion_sim/src/tes/forms/forms_script.rs::resolve_script_with"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "0046FFD0": {
+   "ida": "TESTexture_Constructor",
+   "members": [
+    "crates/oblivion_sim/src/tes/forms/forms_environment.rs::new_texture",
+    "crates/oblivion_sim/src/tes/forms/forms_items.rs::icon",
+    "crates/oblivion_sim/src/tes/forms/forms_misc.rs::texture"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "004700E0": {
+   "ida": "TESTexture_LoadPath",
+   "members": [
+    "crates/oblivion_sim/src/tes/forms/form_components.rs::load_texture",
+    "crates/oblivion_sim/src/tes/forms/forms_items.rs::icon_arm"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "0047DF80": {
+   "ida": "Random_Next",
+   "members": [
+    "crates/oblivion_core/src/crt.rs::random_next",
+    "crates/oblivion_sim/src/tes/actors/inventory.rs::random",
+    "crates/oblivion_sim/src/tes/forms/form_arms.rs::DataLoadHost::random_next",
+    "crates/oblivion_sim/src/tes/winmain/winmain_host.rs::MainThreadCrt::random_next"
+   ],
+   "reason": "reviewed 2026-11-10 (batch 1): one body in oblivion_core::crt; the rest are host seams that call it (the load host hook, the main-thread CRT)"
+  },
+  "004980D0": {
+   "ida": "Renderer_ValidateAdapterAndShaders",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/dx9_system.rs::Dx9SystemDesc::adapter",
+    "crates/oblivion_sim/src/tes/os/renderer_init.rs::validate_adapter_and_shaders"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "004A7A60": {
+   "ida": "DebugMessage_Warning",
+   "members": [
+    "crates/oblivion_sim/src/tes/data/tes_file.rs::TesFileServices::warn",
+    "crates/oblivion_sim/src/tes/forms/forms_init.rs::warn"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "004A80A0": {
+   "ida": "BSTCaseInsensitiveStringMap_HashKey",
+   "members": [
+    "crates/oblivion_sim/src/tes/data/data_handler.rs::EditorIdMap::hash",
+    "crates/oblivion_sim/src/tes/data/data_handler.rs::case_insensitive_hash",
+    "crates/oblivion_sim/src/tes/forms/forms_ai.rs::idle_root_bucket"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "004A8800": {
+   "ida": "IniSettingCollection_ReadSetting",
+   "members": [
+    "crates/oblivion_core/src/crt.rs::format_f",
+    "crates/oblivion_sim/src/tes/settings/mod.rs::SettingCollection::read_setting",
+    "crates/oblivion_sim/src/tes/settings/mod.rs::read_ini_setting"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "004BF9E0": {
+   "ida": "NiVector3_UnitCross",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/path_interpolator.rs::unit_cross",
+    "crates/oblivion_sim/src/gamebryo/transform.rs::unit_cross"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "004D5BD0": {
+   "ida": "TESObjectCELL_FinishAttach",
+   "members": [
+    "crates/oblivion_sim/src/tes/world/cell_reference_loop.rs::finish_attach_reference_loop",
+    "crates/oblivion_sim/src/tes/world/tes_grid.rs::finish_attach"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "004D9A70": {
+   "ida": "TESObjectREFR_ctor",
+   "members": [
+    "crates/oblivion_sim/src/tes/actors/inventory.rs::construct_temporary_reference",
+    "crates/oblivion_sim/src/tes/forms/forms_references.rs::construct_reference"
+   ],
+   "reason": "forwarder: the temporary reference constructs through the port and marks it temporary (audit 2026-11-10)"
+  },
+  "004D9C30": {
+   "ida": "TESObjectREFR_GetBaseFullNameOrEmpty",
+   "members": [
+    "crates/oblivion_sim/src/tes/actors/biped_attach.rs::owner_full_name",
+    "crates/oblivion_sim/src/tes/world/reference_3d.rs::base_full_name"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "004DD850": {
+   "ida": "",
+   "members": [
+    "crates/oblivion_sim/src/tes/actors/actor_enable.rs::enable_actor_reset",
+    "crates/oblivion_sim/src/tes/actors/actor_enable.rs::enable_actor_update",
+    "crates/oblivion_sim/src/tes/script/script_commands.rs::enable_reference"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "004E1580": {
+   "ida": "TESObjectREFR_UpdateBodyModels",
+   "members": [
+    "crates/oblivion_sim/src/tes/actors/biped_attach.rs::attach_creature_body_model",
+    "crates/oblivion_sim/src/tes/actors/equipment.rs::creature_body_equip",
+    "crates/oblivion_sim/src/tes/actors/equipment_3d.rs::update_body_models"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "004E4690": {
+   "ida": "",
+   "members": [
+    "crates/oblivion_sim/src/tes/actors/actor_enable.rs::disable_actor_process",
+    "crates/oblivion_sim/src/tes/script/script_commands.rs::disable_reference"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "004E4A10": {
+   "ida": "NiTArray_SetSize",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/renderer.rs::OriginalPointerArray::set_size",
+    "crates/oblivion_sim/src/tes/forms/forms_items.rs::NiTArrayU32::set_size"
+   ],
+   "reason": "OWED: duplicate, to be merged (docs/audit/placement-audit-2026-11-10.md section 2d); not a reviewed exception"
+  },
+  "004E5170": {
+   "ida": "TESPathGrid_SetLinkedPointsEnabled",
+   "members": [
+    "crates/oblivion_pathing/src/grid.rs::set_linked_points_enabled",
+    "crates/oblivion_sim/src/tes/world/path_search.rs::path_grid_set_linked_points_enabled"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "004E5730": {
+   "ida": "TESPathGrid_FindNearestPoint",
+   "members": [
+    "crates/oblivion_pathing/src/grid.rs::grid_nearest_point",
+    "crates/oblivion_sim/src/tes/world/path_search.rs::grid_nearest_point"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "004FAB20": {
+   "ida": "",
+   "members": [
+    "crates/oblivion_sim/src/tes/script/script_commands.rs::run_function",
+    "crates/oblivion_sim/src/tes/script/script_vm.rs::call_function",
+    "crates/oblivion_sim/src/tes/script/script_vm.rs::read_value"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "004FBE00": {
+   "ida": "Script_Run",
+   "members": [
+    "crates/oblivion_sim/src/tes/forms/forms_script.rs::run_script",
+    "crates/oblivion_sim/src/tes/script/script_vm.rs::script_run"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "00512540": {
+   "ida": "",
+   "members": [
+    "crates/oblivion_sim/src/tes/actors/move_to.rs::move_reference_to",
+    "crates/oblivion_sim/src/tes/actors/player_move.rs::move_player_to",
+    "crates/oblivion_sim/src/tes/actors/player_move.rs::move_player_to_tail"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "005169A0": {
+   "ida": "",
+   "members": [
+    "crates/oblivion_sim/src/tes/script/script_commands.rs::run_command",
+    "crates/oblivion_sim/src/tes/script/script_vm.rs::begin_block",
+    "crates/oblivion_sim/src/tes/script/script_vm.rs::dispatch",
+    "crates/oblivion_sim/src/tes/script/script_vm.rs::if_statement",
+    "crates/oblivion_sim/src/tes/script/script_vm.rs::set_statement"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "0052ADF0": {
+   "ida": "",
+   "members": [
+    "crates/oblivion_sim/src/tes/script/script_commands.rs::resolve_stage_item",
+    "crates/oblivion_sim/src/tes/script/script_vm.rs::script_run_forced"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "0053AC60": {
+   "ida": "BlendSettings_Initialize",
+   "members": [
+    "crates/oblivion_sim/src/tes/settings/blend_settings.rs::initialize_blend_settings",
+    "crates/oblivion_sim/src/tes/winmain/mod.rs::blend_version_file"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "00548020": {
+   "ida": "ActorValue_HealthFromEndurance",
+   "members": [
+    "crates/oblivion_sim/src/tes/actors/player.rs::pc_base_health",
+    "crates/oblivion_sim/src/tes/forms/forms_init.rs::player_health"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "00554260": {
+   "ida": "FaceGen_BuildHair",
+   "members": [
+    "crates/oblivion_sim/src/tes/facegen/face_gen_nodes.rs::add_hair",
+    "crates/oblivion_sim/src/tes/facegen/face_gen_tasks.rs::build_hair"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "005547F0": {
+   "ida": "FaceGen_BuildEyes",
+   "members": [
+    "crates/oblivion_sim/src/tes/facegen/face_gen_nodes.rs::add_eye",
+    "crates/oblivion_sim/src/tes/facegen/face_gen_tasks.rs::build_eyes"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "005551C0": {
+   "ida": "FaceGen_ApplyFaceTexture",
+   "members": [
+    "crates/oblivion_sim/src/tes/facegen/face_gen_head.rs::face_gen_age_byte",
+    "crates/oblivion_sim/src/tes/facegen/face_gen_nodes.rs::apply_face_texture",
+    "crates/oblivion_sim/src/tes/facegen/face_gen_nodes.rs::apply_hair_tint"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "00557E60": {
+   "ida": "BSFaceGenModel_GenerateTexture",
+   "members": [
+    "crates/oblivion_sim/src/bs/face_gen_model.rs::model_generate_face_texture",
+    "crates/oblivion_sim/src/bs/face_gen_texture.rs::generate_face_gen_image",
+    "crates/oblivion_sim/src/bs/face_gen_texture.rs::generate_face_gen_texture"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "0055E000": {
+   "ida": "NiTPointerMap_Lookup",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/controller_sequence.rs::ControllerManager::find_sequence",
+    "crates/oblivion_sim/src/tes/data/data_handler.rs::EditorIdMap::lookup",
+    "crates/oblivion_sim/src/tes/data/save_load_game.rs::ChangeChains::get",
+    "crates/oblivion_sim/src/tes/forms/forms_ai.rs::lookup_root",
+    "crates/oblivion_sim/src/tes/forms/forms_world.rs::get",
+    "crates/oblivion_sim/src/tes/forms/forms_world.rs::get_mut"
+   ],
+   "reason": "OWED: duplicate, to be merged (docs/audit/placement-audit-2026-11-10.md section 2d); not a reviewed exception"
+  },
+  "0057A0D0": {
+   "ida": "Interface_RefreshMapMenu",
+   "members": [
+    "crates/oblivion_sim/src/tes/interface/interface_manager.rs::interface_refresh_map_menu",
+    "crates/oblivion_sim/src/tes/winmain/mod.rs::refresh_map_menu"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "0057A2D0": {
+   "ida": "InterfaceManager_CreateInventoryMenuIfReady",
+   "members": [
+    "crates/oblivion_sim/src/tes/interface/interface_manager.rs::inventory_menu_create",
+    "crates/oblivion_sim/src/tes/menus/inventory_menu.rs::InventoryMenu::has_required_tiles"
+   ],
+   "reason": "reviewed 2026-11-11: the function is in interface_manager.rs; InventoryMenu::has_required_tiles is its tile test (+0x28..+0x38 nonnull), a method of the menu's type"
+  },
+  "0057B950": {
+   "ida": "LoadingMenu_SetSectionProgressIfReady",
+   "members": [
+    "crates/oblivion_sim/src/tes/forms/form_arms.rs::DataLoadHost::section_progress",
+    "crates/oblivion_sim/src/tes/menus/loading_menu.rs::loading_menu_set_section_progress_if_ready"
+   ],
+   "reason": "reviewed 2026-11-10 (batch 1): one body in loading_menu.rs; DataLoadHost::section_progress is the load host hook"
+  },
+  "0057C140": {
+   "ida": "InterfaceManager_IsMenuInputActive",
+   "members": [
+    "crates/oblivion_sim/src/tes/actors/idle_select.rs::MenuInputAnswers::active",
+    "crates/oblivion_sim/src/tes/ai/ai_process.rs::AiArms::menu_input_active",
+    "crates/oblivion_sim/src/tes/interface/interface_manager.rs::is_menu_input_active"
+   ],
+   "reason": "reviewed 2026-11-10 (batch 1): one body in interface_manager.rs; AiArms::menu_input_active is the hook, and MenuInputAnswers::active answers it from the snapshot the interface took, where the AI arms hold no TileEngine"
+  },
+  "0057F170": {
+   "ida": "InterfaceManager_Render",
+   "members": [
+    "crates/oblivion_host/src/screens.rs::draw_screens",
+    "crates/oblivion_sim/src/tes/interface/interface_draw.rs::interface_draw_list"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "00582160": {
+   "ida": "InterfaceManager_GetSingleton",
+   "members": [
+    "crates/oblivion_sim/src/tes/interface/interface_manager.rs::InterfaceMovieReads::interface_manager_present",
+    "crates/oblivion_sim/src/tes/interface/interface_manager.rs::InterfaceMovieReads::publish_interface_manager",
+    "crates/oblivion_sim/src/tes/interface/interface_manager.rs::interface_manager_get_singleton",
+    "crates/oblivion_sim/src/tes/interface/tile_values.rs::interface_menu_root"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "00587D20": {
+   "ida": "Menu_CreateByID",
+   "members": [
+    "crates/oblivion_sim/src/tes/interface/interface_manager.rs::menu_create_by_id",
+    "crates/oblivion_sim/src/tes/interface/tile.rs::InterfaceHost::create_unported_menu"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "00589B70": {
+   "ida": "TileMenu_GetByMenuID",
+   "members": [
+    "crates/oblivion_sim/src/tes/interface/interface_manager.rs::InterfaceMovieReads::tile_menu_present",
+    "crates/oblivion_sim/src/tes/interface/tile.rs::TileEngine::tile_menu_by_id"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "0058CEB0": {
+   "ida": "Tile_SetNumericTrait",
+   "members": [
+    "crates/oblivion_sim/src/tes/interface/tile.rs::TileEngine::find_value",
+    "crates/oblivion_sim/src/tes/interface/tile.rs::TileEngine::numeric_trait",
+    "crates/oblivion_sim/src/tes/interface/tile_values.rs::tile_set_numeric_trait"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "0058E870": {
+   "ida": "Tile_UpdateSceneNode",
+   "members": [
+    "crates/oblivion_sim/src/tes/interface/interface_frame.rs::tile_run_trait_transitions",
+    "crates/oblivion_sim/src/tes/interface/interface_scene.rs::clip_rect",
+    "crates/oblivion_sim/src/tes/interface/interface_scene.rs::interface_update_tile_scene",
+    "crates/oblivion_sim/src/tes/interface/interface_scene.rs::load_image_texture",
+    "crates/oblivion_sim/src/tes/interface/interface_scene.rs::resize_geometry",
+    "crates/oblivion_sim/src/tes/interface/interface_scene.rs::update_color",
+    "crates/oblivion_sim/src/tes/interface/interface_scene.rs::update_position"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "005A46B0": {
+   "ida": "QuickKeysMenu_HasRequiredTiles",
+   "members": [
+    "crates/oblivion_sim/src/tes/menus/magic_popup_menu.rs::MagicPopupMenu::has_required_tiles",
+    "crates/oblivion_sim/src/tes/menus/quick_keys_menu.rs::QuickKeysMenu::has_required_tiles"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "005ADBC0": {
+   "ida": "LoadingMenu_Destructor",
+   "members": [
+    "crates/oblivion_sim/src/tes/interface/tile.rs::InterfaceHost::resume_game_sounds_after_loading",
+    "crates/oblivion_sim/src/tes/menus/loading_menu.rs::loading_menu_close_end"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "005AE240": {
+   "ida": "LoadgameMenu_ShowSaveDetails",
+   "members": [
+    "crates/oblivion_sim/src/tes/data/save_files.rs::SaveFile::detail_text",
+    "crates/oblivion_sim/src/tes/menus/loadgame_menu.rs::load_menu_show_details"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "005AE6D0": {
+   "ida": "LoadgameMenu_AddSaveRow",
+   "members": [
+    "crates/oblivion_sim/src/tes/data/save_files.rs::SaveFile::caption",
+    "crates/oblivion_sim/src/tes/menus/loadgame_menu.rs::load_menu_add_row"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "005B5870": {
+   "ida": "MainMenu_Destructor",
+   "members": [
+    "crates/oblivion_sim/src/tes/interface/tile.rs::InterfaceHost::main_menu_destructor_media",
+    "crates/oblivion_sim/src/tes/menus/main_menu.rs::main_menu_destructor"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "005B5DF0": {
+   "ida": "MainMenu_NewGameConfirmationCallback",
+   "members": [
+    "crates/oblivion_sim/src/tes/interface/tile.rs::InterfaceHost::new_game_music",
+    "crates/oblivion_sim/src/tes/menus/main_menu.rs::main_menu_new_game"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "005B5F20": {
+   "ida": "MainMenu_ctor",
+   "members": [
+    "crates/oblivion_sim/src/tes/interface/tile.rs::InterfaceHost::main_menu_ctor_media",
+    "crates/oblivion_sim/src/tes/menus/main_menu.rs::main_menu_constructed",
+    "crates/oblivion_sim/src/tes/winmain/winmain_menu_media.rs::main_menu_ctor_media"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "005E0550": {
+   "ida": "Actor_IsSneaking",
+   "members": [
+    "crates/oblivion_sim/src/tes/ai/detection.rs::sneaking",
+    "crates/oblivion_sim/src/tes/menus/hud_reticle.rs::player_is_sneaking"
+   ],
+   "reason": "OWED: duplicate, to be merged (docs/audit/placement-audit-2026-11-10.md section 2c); not a reviewed exception"
+  },
+  "005E0660": {
+   "ida": "Actor_GetScaledBoundHeight",
+   "members": [
+    "crates/oblivion_sim/src/tes/actors/actor.rs::actor_height",
+    "crates/oblivion_sim/src/tes/world/path_search.rs::ActorSearchHost::reference_height"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "005F1910": {
+   "ida": "Actor_FloorCalculatedActorValue",
+   "members": [
+    "crates/oblivion_sim/src/tes/actors/actor.rs::calculated",
+    "crates/oblivion_sim/src/tes/actors/player.rs::floor_calculated_actor_value"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "0065A450": {
+   "ida": "Actor_SetZRotationChecked",
+   "members": [
+    "crates/oblivion_core/src/x87.rs::float_fmod",
+    "crates/oblivion_sim/src/tes/actors/actor.rs::actor_set_z_rotation_checked"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "0065AD00": {
+   "ida": "Actor_GetDesiredProcessLevel",
+   "members": [
+    "crates/oblivion_sim/src/tes/actors/actor_package.rs::desired_level_is_3",
+    "crates/oblivion_sim/src/tes/actors/actor_process.rs::actor_desired_level"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "0065C620": {
+   "ida": "PointerList_RemoveFirstMatchingItem",
+   "members": [
+    "crates/oblivion_core/src/pointer_list.rs::remove_first_matching",
+    "crates/oblivion_sim/src/tes/actors/actor_process.rs::ActorList::remove_first_matching",
+    "crates/oblivion_sim/src/tes/forms/forms_init.rs::remove_after_previous"
+   ],
+   "reason": "OWED: duplicate, to be merged (docs/audit/placement-audit-2026-11-10.md section 2d); not a reviewed exception"
+  },
+  "0066EAF0": {
+   "ida": "PlayerCharacter_MoveToCell",
+   "members": [
+    "crates/oblivion_sim/src/tes/actors/player_move.rs::camera_block",
+    "crates/oblivion_sim/src/tes/actors/player_move.rs::intro_block",
+    "crates/oblivion_sim/src/tes/actors/player_move.rs::move_tail",
+    "crates/oblivion_sim/src/tes/actors/player_move.rs::place_camera",
+    "crates/oblivion_sim/src/tes/actors/player_move.rs::place_listener",
+    "crates/oblivion_sim/src/tes/actors/player_move.rs::player_move_to_cell",
+    "crates/oblivion_sim/src/tes/os/os_sound_music.rs::ScriptMusic::cell_music",
+    "crates/oblivion_sim/src/tes/os/os_sound_music.rs::ScriptMusic::intro_music"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "0067B1E0": {
+   "ida": "PointerList_AppendNonNull",
+   "members": [
+    "crates/oblivion_core/src/pointer_list.rs::append_non_null",
+    "crates/oblivion_sim/src/tes/actors/actor_process.rs::ActorList::append_non_null",
+    "crates/oblivion_sim/src/tes/interface/interface_text.rs::push_line_width"
+   ],
+   "reason": "OWED: duplicate, to be merged (docs/audit/placement-audit-2026-11-10.md section 2d); not a reviewed exception"
+  },
+  "0067B320": {
+   "ida": "ActorProcessList_Remove",
+   "members": [
+    "crates/oblivion_sim/src/tes/actors/actor_process.rs::actor_process_list_remove",
+    "crates/oblivion_sim/src/tes/actors/actor_process.rs::release_deleted_process",
+    "crates/oblivion_sim/src/tes/actors/actor_process_frame.rs::remove_list_actor"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "0067D760": {
+   "ida": "PathGridSearch_Constructor",
+   "members": [
+    "crates/oblivion_pathing/src/search.rs::PathGridSearch::default",
+    "crates/oblivion_sim/src/tes/world/path_search.rs::actor_path_grid_search"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "006A9B40": {
+   "ida": "OSSoundGlobals_PauseGameSounds",
+   "members": [
+    "crates/oblivion_sim/src/tes/os/game_sounds.rs::pause_game_sounds",
+    "crates/oblivion_sim/src/tes/os/os_globals.rs::GameSoundPause::pause",
+    "crates/oblivion_sim/src/tes/os/os_globals.rs::OsSoundGlobals::pause_game_sounds"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "006A9C00": {
+   "ida": "OSSoundGlobals_ResumeGameSounds",
+   "members": [
+    "crates/oblivion_sim/src/tes/os/game_sounds.rs::resume_game_sounds",
+    "crates/oblivion_sim/src/tes/os/game_sounds.rs::resume_game_sounds_checked",
+    "crates/oblivion_sim/src/tes/os/os_globals.rs::GameSoundPause::resume",
+    "crates/oblivion_sim/src/tes/os/os_globals.rs::OsSoundGlobals::resume_game_sounds"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "006BB270": {
+   "ida": "NiFloatKey_InterpolateSequence",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/animation.rs::FloatKeyData::interpolate",
+    "crates/oblivion_sim/src/gamebryo/animation.rs::FloatKeyData::sample",
+    "crates/oblivion_sim/src/gamebryo/transform_animation.rs::sample_float_key_sequence",
+    "crates/oblivion_sim/src/gamebryo/transform_animation.rs::search_sequence"
+   ],
+   "reason": "OWED: duplicate, to be merged (docs/audit/placement-audit-2026-11-10.md section 2c); not a reviewed exception"
+  },
+  "006BBBA0": {
+   "ida": "NiPosKey_InterpolateSequence",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/position_animation.rs::PositionKeyData::interpolate",
+    "crates/oblivion_sim/src/gamebryo/transform_animation.rs::sample_position_sequence"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "006BE040": {
+   "ida": "NiColorKey_InterpolateSequence",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/color_animation.rs::ColorKeyData::sample",
+    "crates/oblivion_sim/src/gamebryo/particle_color.rs::ColorKeyData::sample"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "006C5420": {
+   "ida": "NiDefaultAVObjectPalette_SetScene",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/av_object_palette.rs::DefaultAvObjectPalette::set_scene",
+    "crates/oblivion_sim/src/tes/forms/forms_references.rs::set_reference_base_form"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "006CE320": {
+   "ida": "NiSingleInterpController_LoadBinary",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/particle_controller.rs::ParticleEmitterController::bind_birth_rate_immediate",
+    "crates/oblivion_sim/src/gamebryo/particle_controller.rs::ParticleEmitterController::bind_interpolators",
+    "crates/oblivion_sim/src/gamebryo/particle_modifier_value_controller.rs::ParticleEmitterFloatController::bind_interpolator_immediate",
+    "crates/oblivion_sim/src/gamebryo/particle_modifier_value_controller.rs::ParticleGravityStrengthController::bind_interpolator_immediate",
+    "crates/oblivion_sim/src/gamebryo/particle_modifier_value_controller.rs::ParticleModifierActiveController::bind_interpolator_immediate",
+    "crates/oblivion_sim/src/gamebryo/texture.rs::load_texture_controller_prefix",
+    "crates/oblivion_sim/src/gamebryo/texture.rs::parse_flip_controller_payload",
+    "crates/oblivion_sim/src/gamebryo/texture.rs::parse_texture_transform_controller_payload",
+    "crates/oblivion_sim/src/gamebryo/transform_controller.rs::parse_single_interp_controller_payload"
+   ],
+   "reason": "OWED: duplicate, to be merged (docs/audit/placement-audit-2026-11-10.md section 2d); not a reviewed exception"
+  },
+  "006D2F60": {
+   "ida": "NiFloatInterpolator_LoadBinary",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/animation.rs::FloatInterpolator::load_scalar_and_data",
+    "crates/oblivion_sim/src/gamebryo/interpolator_stream.rs::load_float_interpolator_payload"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "006D67B0": {
+   "ida": "NiTransformInterpolator_LoadBinary",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/interpolator_stream.rs::load_transform_interpolator_payload",
+    "crates/oblivion_sim/src/gamebryo/transform_animation.rs::TransformInterpolator::load_transform_and_data"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "006E8550": {
+   "ida": "NiBoolInterpolator_LoadBinary",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/bool_animation.rs::BoolInterpolator::load_scalar_and_data",
+    "crates/oblivion_sim/src/gamebryo/interpolator_stream.rs::load_bool_interpolator_payload",
+    "crates/oblivion_sim/src/gamebryo/interpolator_stream.rs::read_bool_body"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "006F9980": {
+   "ida": "BSStream_LoadFromPath",
+   "members": [
+    "crates/oblivion_sim/src/bs/stream.rs::load_bs_stream_from_path",
+    "crates/oblivion_sim/src/bs/stream.rs::load_bs_stream_with_reader",
+    "crates/oblivion_sim/src/tes/winmain/mod.rs::load_main_thread_stream"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "006FA1B0": {
+   "ida": "BSAHash_HashFolderAndFile",
+   "members": [
+    "crates/oblivion_core/src/hash.rs::bsa_name_hash",
+    "crates/oblivion_core/src/hash.rs::bsa_rolling_hash",
+    "crates/oblivion_sim/src/bs/archive.rs::bsa_path_hashes",
+    "crates/oblivion_sim/src/bs/archive.rs::folder_text"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "006FAB60": {
+   "ida": "",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/particle_dynamics.rs::ParticleModifierBase::set_active",
+    "crates/oblivion_sim/src/gamebryo/particle_dynamics.rs::ParticleModifierPending::set_active",
+    "crates/oblivion_sim/src/gamebryo/particle_system.rs::set_modifier_active_byte",
+    "crates/oblivion_sim/src/gamebryo/particle_system.rs::store_modifier_active"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "006FAEE0": {
+   "ida": "WrappedAngle16_Set",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/extra_data.rs::wrapped_angle_word_53",
+    "crates/oblivion_sim/src/tes/actors/actor_process.rs::wrapped_angle_word"
+   ],
+   "reason": "OWED: duplicate, to be merged (docs/audit/placement-audit-2026-11-10.md section 2c); not a reviewed exception"
+  },
+  "006FFCE0": {
+   "ida": "NiObjectNET_LoadBinary",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/object_net.rs::parse_alpha_property_payload",
+    "crates/oblivion_sim/src/gamebryo/object_net.rs::parse_object_net_payload",
+    "crates/oblivion_sim/src/gamebryo/particle_system.rs::ParticleSystem::apply_loaded_payload",
+    "crates/oblivion_sim/src/gamebryo/particle_system.rs::parse_particle_system_payload"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "00700050": {
+   "ida": "NiObjectNET_LinkObject",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/object_net.rs::resolve_object_net_extra_links",
+    "crates/oblivion_sim/src/gamebryo/object_net.rs::resolve_object_net_links",
+    "crates/oblivion_sim/src/gamebryo/particle_system.rs::resolve_particle_system_links",
+    "crates/oblivion_sim/src/gamebryo/properties.rs::resolve_property_links",
+    "crates/oblivion_sim/src/gamebryo/stream_graph.rs::link_object",
+    "crates/oblivion_sim/src/gamebryo/texture.rs::resolve_texture_controller_head",
+    "crates/oblivion_sim/src/gamebryo/transform_controller.rs::publish_node_controller_head"
+   ],
+   "reason": "OWED: needs design (batch 3b): the exe's head store (007000A6..007000DF) checks no class, so the texture/node head checks and resolve_object_net_links' unsupported-head Err are host additions; one function headed 00700050, the extras stage by its range, wrappers IDA: N/A, the class checks as caller-side adapters"
+  },
+  "007023E0": {
+   "ida": "NiSourceTexture_LoadBinary",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/search_path.rs::bs_search_path_candidates",
+    "crates/oblivion_sim/src/gamebryo/texture.rs::SourceTexture::load",
+    "crates/oblivion_sim/src/gamebryo/texture.rs::parse_source_texture_payload"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "00707370": {
+   "ida": "NiAVObject_Update",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/scene_update.rs::update_scene_object",
+    "crates/oblivion_sim/src/gamebryo/screen_elements.rs::update_screen_elements_world",
+    "crates/oblivion_sim/src/tes/interface/interface_draw.rs::compose"
+   ],
+   "reason": "OWED: duplicate, to be merged (docs/audit/placement-audit-2026-11-10.md section 2d); not a reviewed exception"
+  },
+  "00707610": {
+   "ida": "NiAVObject_RefreshPropertyState",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/av_object.rs::refresh_and_update",
+    "crates/oblivion_sim/src/gamebryo/scene_state.rs::refresh_property_state"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "00707F00": {
+   "ida": "NiAVObject_LoadBinary",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/av_object.rs::parse_av_object_prefix",
+    "crates/oblivion_sim/src/gamebryo/mesh_geometry.rs::parse_mesh_tri_shape_payload",
+    "crates/oblivion_sim/src/gamebryo/scene_node.rs::parse_scene_node_payload"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "0070B120": {
+   "ida": "NiNode_DetachChild",
+   "members": [
+    "crates/oblivion_sim/src/bs/scene_graphs.rs::detach_scene_child",
+    "crates/oblivion_sim/src/gamebryo/scene_node.rs::detach_child"
+   ],
+   "reason": "OWED: duplicate, to be merged (docs/audit/placement-audit-2026-11-10.md section 2c); not a reviewed exception"
+  },
+  "0070B530": {
+   "ida": "NiNode_LinkObject",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/scene_node.rs::link_scene_node",
+    "crates/oblivion_sim/src/gamebryo/scene_node.rs::link_scene_node_children",
+    "crates/oblivion_sim/src/gamebryo/scene_node.rs::link_stage",
+    "crates/oblivion_sim/src/gamebryo/stream_graph.rs::resolve_scene_node_slots"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "00713FF0": {
+   "ida": "NiStream_ReadTypeTableAndCreateObjects",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/stream_graph.rs::load_object",
+    "crates/oblivion_sim/src/gamebryo/stream_objects.rs::read_stream_object_table"
+   ],
+   "reason": "reviewed 2026-11-10 (batch 1): two stages of one port, both in production: read_stream_object_table (type table and creation) and load_object (one object's LoadBinary)"
+  },
+  "00714390": {
+   "ida": "NiStream_LoadObjectsAndInvokeCallbacks",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/stream_callbacks.rs::dispatch_stream_root_callbacks",
+    "crates/oblivion_sim/src/gamebryo/stream_file_pipeline.rs::load_supported_stream_file",
+    "crates/oblivion_sim/src/gamebryo/stream_graph.rs::load_graph",
+    "crates/oblivion_sim/src/gamebryo/stream_graph.rs::load_stream_graph_body",
+    "crates/oblivion_sim/src/gamebryo/stream_graph.rs::load_stream_graph_with_groups",
+    "crates/oblivion_sim/src/gamebryo/stream_graph.rs::load_stream_graph_with_roots",
+    "crates/oblivion_sim/src/gamebryo/stream_postload.rs::dispatch_stream_post_load",
+    "crates/oblivion_sim/src/gamebryo/stream_postload.rs::finalize_stream_graph"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "00715E70": {
+   "ida": "NiTimeController_LinkObject",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/particle_controller.rs::link_particle_time_controller",
+    "crates/oblivion_sim/src/gamebryo/particle_controller.rs::link_particle_time_controller_modern",
+    "crates/oblivion_sim/src/gamebryo/particle_controller.rs::resolve_time_links",
+    "crates/oblivion_sim/src/gamebryo/texture.rs::TextureController::link_modern",
+    "crates/oblivion_sim/src/gamebryo/texture.rs::resolve_texture_controller_links",
+    "crates/oblivion_sim/src/gamebryo/transform_controller.rs::NodeController::link_modern",
+    "crates/oblivion_sim/src/gamebryo/transform_controller.rs::resolve_node_controller_links"
+   ],
+   "reason": "OWED: duplicate, to be merged (docs/audit/placement-audit-2026-11-10.md section 2c); not a reviewed exception"
+  },
+  "00715F40": {
+   "ida": "NiTimeController_LoadBinary",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/particle_controller.rs::parse_particle_time_controller_payload",
+    "crates/oblivion_sim/src/gamebryo/particle_modifier_value_controller.rs::ParticleModifierValueControllerCold::apply_loaded_prefix",
+    "crates/oblivion_sim/src/gamebryo/texture.rs::TextureController::apply_loaded_prefix",
+    "crates/oblivion_sim/src/gamebryo/transform_controller.rs::NodeController::apply_loaded_prefix"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "00719AB0": {
+   "ida": "",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/mesh_geometry.rs::link_mesh_geometry",
+    "crates/oblivion_sim/src/gamebryo/mesh_geometry.rs::resolve_mesh_tri_shape_data_link",
+    "crates/oblivion_sim/src/gamebryo/mesh_geometry.rs::resolve_mesh_tri_shape_links",
+    "crates/oblivion_sim/src/gamebryo/mesh_tri_strips.rs::resolve_mesh_tri_strips_data_link"
+   ],
+   "reason": "OWED (batch 3): stages and class variants with their own statuses and texts; the strips link never stores the skin; not attempted"
+  },
+  "00729450": {
+   "ida": "NiGeometryData_LoadBinary",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/mesh_geometry.rs::float_vectors",
+    "crates/oblivion_sim/src/gamebryo/mesh_geometry.rs::parse_mesh_geometry_data_payload",
+    "crates/oblivion_sim/src/gamebryo/mesh_geometry.rs::parse_mesh_tri_shape_data_payload",
+    "crates/oblivion_sim/src/gamebryo/particle_data.rs::f32_vectors",
+    "crates/oblivion_sim/src/gamebryo/particle_data.rs::parse_particle_data_payload",
+    "crates/oblivion_sim/src/gamebryo/stream_allocation_groups.rs::StreamAllocationGroup::allocate",
+    "crates/oblivion_sim/src/gamebryo/stream_allocation_groups.rs::StreamAllocationGroup::allocation_count",
+    "crates/oblivion_sim/src/gamebryo/stream_allocation_groups.rs::StreamAllocationGroup::used_bytes"
+   ],
+   "reason": "OWED: duplicate, to be merged (docs/audit/placement-audit-2026-11-10.md section 2d); not a reviewed exception"
+  },
+  "007317B0": {
+   "ida": "NiPropertyState_ApplyDefaultProperties",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/registration.rs::NiProcessDefaults::scene_property_defaults",
+    "crates/oblivion_sim/src/gamebryo/scene_state.rs::apply_default_properties"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "0074A0A0": {
+   "ida": "",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/particle_mesh_emitter.rs::directed_mesh_velocity",
+    "crates/oblivion_sim/src/gamebryo/particle_mesh_emitter.rs::random_mesh_velocity",
+    "crates/oblivion_sim/src/gamebryo/transform.rs::resolve_scene_relative_transform"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "0074A390": {
+   "ida": "",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/mesh_skin_owners.rs::MeshSkinResolvedOwner::view",
+    "crates/oblivion_sim/src/gamebryo/mesh_skin_owners.rs::make_mesh_skin_resolved_owner",
+    "crates/oblivion_sim/src/gamebryo/mesh_skin_partition.rs::MeshSkinPartitionOwnedView::view",
+    "crates/oblivion_sim/src/gamebryo/mesh_skin_partition.rs::MeshSkinPartitionRecord::view",
+    "crates/oblivion_sim/src/gamebryo/particle_mesh_emitter.rs::skin_vertex_weighted"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "0074BCD0": {
+   "ida": "NiPSysMeshEmitter_SampleUnskinnedFace",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/mesh_geometry.rs::MeshTriShapeEmitterView::view",
+    "crates/oblivion_sim/src/gamebryo/particle_mesh_emitter.rs::choose_triangle",
+    "crates/oblivion_sim/src/gamebryo/particle_mesh_emitter.rs::sample_face"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "0074C770": {
+   "ida": "NiPSysMeshEmitter_Generate",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/mesh_geometry.rs::make_mesh_tri_shape_emitter_view",
+    "crates/oblivion_sim/src/gamebryo/mesh_geometry.rs::make_stream_mesh_emitter_view",
+    "crates/oblivion_sim/src/gamebryo/particle_mesh_emitter.rs::ParticleMeshEmitter::generate",
+    "crates/oblivion_sim/src/gamebryo/particle_mesh_emitter.rs::draw_rand15"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "0074C910": {
+   "ida": "NiPSysMeshEmitter_AddGeometry",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/mesh_geometry.rs::make_skinned_mesh_tri_shape_emitter_view",
+    "crates/oblivion_sim/src/gamebryo/mesh_geometry.rs::mark_mesh_emitter_keep_flags",
+    "crates/oblivion_sim/src/gamebryo/mesh_geometry.rs::mesh_skin_link_view",
+    "crates/oblivion_sim/src/gamebryo/mesh_skin_owners.rs::make_mesh_skin_resolved_owner_with_partition",
+    "crates/oblivion_sim/src/gamebryo/particle_mesh_emitter.rs::add_cloned_mesh_geometry",
+    "crates/oblivion_sim/src/gamebryo/particle_mesh_emitter.rs::append_particle_mesh_emitter_link_slot",
+    "crates/oblivion_sim/src/gamebryo/particle_mesh_emitter.rs::make_mesh_skin_cache_entry",
+    "crates/oblivion_sim/src/gamebryo/particle_mesh_emitter.rs::prepare_particle_mesh_skin_cache"
+   ],
+   "reason": "OWED: duplicate, to be merged (docs/audit/placement-audit-2026-11-10.md section 2d); not a reviewed exception"
+  },
+  "00750040": {
+   "ida": "NiPSysEmitterCtlr_EmitRateWindow",
+   "members": [
+    "crates/oblivion_core/src/x87.rs::truncated_low16",
+    "crates/oblivion_sim/src/gamebryo/particle_controller.rs::ParticleEmitterController::emit_rate_window"
+   ],
+   "reason": "the x87 helper the function uses, named for its site (audit 2026-11-10)"
+  },
+  "00750260": {
+   "ida": "NiPSysEmitterCtlr_Update",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/particle_controller.rs::ParticleEmitterController::update_keyed",
+    "crates/oblivion_sim/src/gamebryo/particle_controller.rs::ParticleEmitterController::update_managed_non_blend",
+    "crates/oblivion_sim/src/gamebryo/particle_controller_wrap.rs::ParticleControllerWrappedBool::continue_after_gate_with_emit",
+    "crates/oblivion_sim/src/gamebryo/particle_controller_wrap.rs::begin_after_prior_active",
+    "crates/oblivion_sim/src/gamebryo/particle_controller_wrap.rs::begin_after_prior_inactive",
+    "crates/oblivion_sim/src/gamebryo/particle_controller_wrap.rs::end_of_active_run"
+   ],
+   "reason": "reviewed 2026-11-10 (batch 1): arms of one port; update_keyed calls the key scans in particle_controller_wrap.rs, which has the wrapped continuation"
+  },
+  "00752CB0": {
+   "ida": "NiPSysModifier_LinkObject",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/particle_color.rs::resolve_particle_color_links",
+    "crates/oblivion_sim/src/gamebryo/particle_dynamics.rs::resolve_particle_bound_update_link",
+    "crates/oblivion_sim/src/gamebryo/particle_dynamics.rs::resolve_particle_grow_fade_link",
+    "crates/oblivion_sim/src/gamebryo/particle_dynamics.rs::resolve_particle_position_link",
+    "crates/oblivion_sim/src/gamebryo/particle_gravity.rs::link_particle_gravity",
+    "crates/oblivion_sim/src/gamebryo/particle_rotation.rs::link_particle_rotation",
+    "crates/oblivion_sim/src/gamebryo/particle_spawn.rs::resolve_particle_spawn_link"
+   ],
+   "reason": "reviewed 2026-11-10 (batch 1): each class's LinkObject over the one guard, stream_objects::check_link_index"
+  },
+  "00753BE0": {
+   "ida": "NiPSysUpdateCtlr_Update",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/particle_controller.rs::ParticleUpdateController::update",
+    "crates/oblivion_sim/src/gamebryo/particle_controller_schedule.rs::ParticleControllerScheduler::run",
+    "crates/oblivion_sim/src/gamebryo/particle_controller_schedule.rs::first_emitter_controller",
+    "crates/oblivion_sim/src/gamebryo/particle_controller_schedule.rs::resolve_cached_emitter_lifespan"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "00754E80": {
+   "ida": "NiTimeController_LoadBinaryThunk",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/particle_controller.rs::ParticleTimeControllerCold::apply_loaded_payload",
+    "crates/oblivion_sim/src/gamebryo/particle_controller.rs::load_particle_time_controller",
+    "crates/oblivion_sim/src/gamebryo/particle_reset_controller.rs::ParticleResetOnLoopController::apply_loaded_payload",
+    "crates/oblivion_sim/src/gamebryo/particle_reset_controller.rs::ParticleResetOnLoopController::parse_payload"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "00754EC0": {
+   "ida": "NiPSysResetOnLoopCtlr_Update",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/particle_reset_controller.rs::ParticleResetOnLoopController::update",
+    "crates/oblivion_sim/src/gamebryo/particle_system.rs::ParticleSystem::request_reset"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "0075E460": {
+   "ida": "",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/particle_controller.rs::ParticleEmitterController::apply_loaded_modifier_payload",
+    "crates/oblivion_sim/src/gamebryo/particle_modifier_value_controller.rs::ParticleModifierValueControllerCold::apply_loaded_name"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "0075E5C0": {
+   "ida": "NiPSysModifierCtlr_SetTarget",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/particle_controller.rs::ParticleEmitterController::cache_modifier_from_target",
+    "crates/oblivion_sim/src/gamebryo/particle_modifier_value_controller.rs::ParticleModifierValueControllerCold::clear_cache_before_set_target",
+    "crates/oblivion_sim/src/gamebryo/particle_modifier_value_controller.rs::ParticleModifierValueControllerCold::lookup_modifier_after_set_target",
+    "crates/oblivion_sim/src/gamebryo/particle_modifier_value_controller.rs::find_named_modifier"
+   ],
+   "reason": "OWED: duplicate, to be merged (docs/audit/placement-audit-2026-11-10.md section 2d); not a reviewed exception"
+  },
+  "0075E6C0": {
+   "ida": "NiPSysModifierCtlr_PostLoad",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/particle_controller.rs::ParticleEmitterController::post_load_modifier",
+    "crates/oblivion_sim/src/gamebryo/particle_modifier_value_controller.rs::ParticleModifierValueControllerCold::post_load_modifier",
+    "crates/oblivion_sim/src/gamebryo/stream_postload.rs::post_load_modifier"
+   ],
+   "reason": "OWED: needs design (batch 3b): one NiPSysModifierCtlr part on both host types; the exe: no target (+0x30) returns with no store (0075E6D2), else +0x44 = the +0xD4 map lookup of +0x40, 0 on a miss (0075E6E8..0075E6F0); the value controller's expired-target Err is a host addition; stream_postload's wrapper heading is IDA: N/A"
+  },
+  "00760010": {
+   "ida": "NiD3DPass_SetStage",
+   "members": [
+    "crates/oblivion_sim/src/bs/shader_classes_common.rs::push_stage",
+    "crates/oblivion_sim/src/gamebryo/shader_runtime.rs::set_pass_stage"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "00760DA0": {
+   "ida": "NiDX9SourceTextureData_LoadDirectFromFile",
+   "members": [
+    "crates/oblivion_sim/src/gamebryo/renderer.rs::RendererCreation::create_direct_texture",
+    "crates/oblivion_sim/src/gamebryo/renderer.rs::RendererCreation::image_info",
+    "crates/oblivion_sim/src/gamebryo/texture_loading.rs::dds_trim_mip_levels",
+    "crates/oblivion_sim/src/gamebryo/texture_loading.rs::direct_format_accepted",
+    "crates/oblivion_sim/src/gamebryo/texture_loading.rs::load_texture_direct"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "00771640": {
+   "ida": "NiD3DTextureStage_SetFilterMode",
+   "members": [
+    "crates/oblivion_sim/src/bs/shader_classes_common.rs::stage_filter",
+    "crates/oblivion_sim/src/gamebryo/shader_runtime.rs::set_texture_stage_filter_mode"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "007B4780": {
+   "ida": "Renderer_GetPixelShaderTarget",
+   "members": [
+    "crates/oblivion_sim/src/bs/shader_classes_common.rs::pixel_target",
+    "crates/oblivion_sim/src/gamebryo/renderer.rs::pixel_shader_target"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "007DAED0": {
+   "ida": "NiTStringPointerMap_CalculateBucket",
+   "members": [
+    "crates/oblivion_core/src/hash.rs::ni_string_hash",
+    "crates/oblivion_sim/src/bs/texture_palette.rs::BsTexturePalette::loose_bucket",
+    "crates/oblivion_sim/src/gamebryo/av_object_palette.rs::DefaultAvObjectPalette::bucket",
+    "crates/oblivion_sim/src/gamebryo/controller_sequence.rs::ControllerManager::map_bucket",
+    "crates/oblivion_sim/src/gamebryo/particle_system.rs::ParticleSystem::find_modifier"
+   ],
+   "reason": "reviewed 2026-11-10 (batch 1): one hash in oblivion_core::hash; the rest are each map's bucket selection over it"
+  },
+  "00801030": {
+   "ida": "BSShader_BuildSourcePath",
+   "members": [
+    "crates/oblivion_sim/src/bs/shader_classes_common.rs::load_pixel",
+    "crates/oblivion_sim/src/bs/shader_classes_common.rs::load_vertex",
+    "crates/oblivion_sim/src/bs/shader_programs.rs::shader_source_path"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "00801110": {
+   "ida": "NiD3DTextureStage_SetDefaults",
+   "members": [
+    "crates/oblivion_sim/src/bs/shader_classes_common.rs::append_default_stage",
+    "crates/oblivion_sim/src/bs/shader_classes_common.rs::stage_defaults",
+    "crates/oblivion_sim/src/gamebryo/shader_runtime.rs::set_texture_stage_defaults"
+   ],
+   "reason": "reviewed 2026-11-10: arms, forwarders or host hooks of one port"
+  },
+  "0089F4D0": {
+   "ida": "bhkWorldObject_SetSystemGroup",
+   "members": [
+    "crates/oblivion_sim/src/bs/havok_world.rs::set_body_group",
+    "crates/oblivion_sim/src/tes/actors/character_controller.rs::set_collision_layer"
+   ],
+   "reason": "OWED: duplicate, to be merged (docs/audit/placement-audit-2026-11-10.md section 2d); not a reviewed exception"
+  },
+  "008A83C0": {
+   "ida": "bhkCollisionLayers_Initialize",
+   "members": [
+    "crates/oblivion_sim/src/bs/havok.rs::initialize_collision_layer_tables",
+    "crates/oblivion_sim/src/bs/havok_layers.rs::apply_layer_stores",
+    "crates/oblivion_sim/src/bs/havok_layers.rs::fill"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "008B0E80": {
+   "ida": "Insert",
+   "members": [
+    "crates/oblivion_core/src/hash.rs::havok_pointer_hash",
+    "crates/oblivion_sim/src/bs/havok.rs::HavokPointerMap::insert",
+    "crates/oblivion_sim/src/bs/havok.rs::havok_pointer_hash"
+   ],
+   "reason": "not reviewed at the 2026-11-10 baseline: one real body with forwarders or stubs"
+  },
+  "00B399D0": {
+   "ida": "",
+   "members": [
+    "crates/oblivion_sim/src/tes/menus/controls_menu.rs::control_name",
+    "crates/oblivion_sim/src/tes/settings/game_settings.rs::GameSettingCollection::control_settings"
+   ],
+   "reason": "a data address: the settings table and its reader (audit 2026-11-10)"
+  }
+ },
+ "bodies": [
+  [
+   "crates/oblivion_sim/src/gamebryo/particle_emitter.rs::ParticleBoxEmitter::emit",
+   "crates/oblivion_sim/src/gamebryo/particle_emitter.rs::ParticleCylinderEmitter::emit",
+   "crates/oblivion_sim/src/gamebryo/particle_emitter.rs::ParticleSphereEmitter::emit"
+  ],
+  [
+   "crates/oblivion_sim/src/tes/interface/menu_slots.rs::dispatch_pointer",
+   "crates/oblivion_sim/src/tes/interface/menu_slots.rs::dispatch_tile_event"
+  ],
+  [
+   "crates/oblivion_sim/src/tes/menus/audio_menu.rs::AudioMenu::set_field",
+   "crates/oblivion_sim/src/tes/menus/gameplay_menu.rs::GameplayMenu::set_field",
+   "crates/oblivion_sim/src/tes/menus/map_menu.rs::MapMenu::set_field",
+   "crates/oblivion_sim/src/tes/menus/options_menu.rs::OptionsMenu::set_field",
+   "crates/oblivion_sim/src/tes/menus/pause_menu.rs::PauseMenu::set_field",
+   "crates/oblivion_sim/src/tes/menus/quantity_menu.rs::QuantityMenu::set_field",
+   "crates/oblivion_sim/src/tes/menus/recharge_menu.rs::RechargeMenu::set_field",
+   "crates/oblivion_sim/src/tes/menus/sleep_wait_menu.rs::SleepWaitMenu::set_field"
+  ]
+ ]
+}

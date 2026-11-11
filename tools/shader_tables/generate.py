@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """Generate bs/shader_tables.rs from the C++ .inc tables and the 00B32590 table."""
-import os
 import re,sys
-B=os.path.join(os.environ.get('OBLIVION_CPP_DIR', '../OblivionRecomp'), 'src/')
+B='/run/media/natfoth/Echo/OblivionRecomp/src/'
 incs=['bs/shader_tallgrass.inc','bs/shader_imagespace_1.inc','bs/shader_hdr.inc','bs/shader_gethit.inc','bs/shader_water.inc','bs/shader_distant_lod.inc','bs/shader_water17.inc','bs/shader_lighting30.inc','bs/shader_shadow_light.inc']
 def upper(n):
     n=n[1:]

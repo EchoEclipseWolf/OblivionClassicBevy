@@ -160,7 +160,7 @@ for entry in ordered:
         rust += [f'        BasicBlock {{ start: 0x{hx(b["start"])}, end: 0x{hx(b["end"])}, tail_instruction: {lit(b["tail"])}, successors: &[{successors}] }},']
     rust += ['    ] },']
 rust += ['];', '']
-write(ROOT / 'crates/recomp_startup/src/scaffold_data.rs', '\n'.join(rust))
+write(ROOT / 'crates/oblivion_testkit/src/scaffold_data.rs', '\n'.join(rust))
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--notes-at-cutover', dest='notes', type=Path)
@@ -171,7 +171,7 @@ blocks = sum(len(f['blocks']) for f in functions.values())
 lines = ['# Startup call-by-call ledger', '',
          'Generated from the preserved 2026-09-24 IDA capture; [roadmap](Startup-Roadmap.md).', '',
          '**`implemented_behavior` here records the C++ port**, from `dispositions.json`, frozen at `cpp-frozen-2026-11-06`. '
-         'What the Rust port has is `RUST_PORTED_THROUGH` in `crates/recomp_startup/src/scaffold.rs`.', '',
+         'What the Rust port has is `RUST_PORTED_THROUGH` in `crates/oblivion_testkit/src/scaffold.rs`.', '',
          f'{len(functions)} captured bodies; {calls} call sites; {blocks} CFG blocks (including external tail nodes); '
          f'{indirects} raw indirect call sites; {len(deps)} defined dependency methods.', '',
          '**Read order:** begin at `0098787C`; follow each basic block and its successor edges. '
@@ -189,7 +189,7 @@ lines = ['# Startup call-by-call ledger', '',
          'CRT return/exception cleanup and other menu-factory cases remain conditional context. '
          'Later gameplay, save loading and shutdown are separate milestones. This is not a complete transitive engine call graph.', '',
          'All addresses below are evidence IDs only. Source: `tools/startup_roadmap/manifest.json`; '
-         'code: `crates/recomp_startup/src/scaffold_data.rs`; dispositions: '
+         'code: `crates/oblivion_testkit/src/scaffold_data.rs`; dispositions: '
          '`tools/startup_roadmap/dispositions.json`. Every dependency carries a stub record '
          'with its identity and resolution. Original signatures '
          'are metadata, never a callable cast.', '',

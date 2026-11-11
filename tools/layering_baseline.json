@@ -1,0 +1,84 @@
+{
+  "crates/oblivion_sim/src/bs/face_gen_files.rs": [
+    "oblivion_sim::tes::facegen"
+  ],
+  "crates/oblivion_sim/src/bs/face_gen_model.rs": [
+    "oblivion_sim::tes::facegen"
+  ],
+  "crates/oblivion_sim/src/bs/face_gen_texture.rs": [
+    "oblivion_sim::tes::facegen"
+  ],
+  "crates/oblivion_sim/src/bs/havok.rs": [
+    "oblivion_sim::tes::settings::game_settings"
+  ],
+  "crates/oblivion_sim/src/bs/havok_stream.rs": [
+    "oblivion_sim::tes::settings::blend_settings"
+  ],
+  "crates/oblivion_sim/src/bs/havok_world.rs": [
+    "oblivion_sim::tes::settings",
+    "oblivion_sim::tes::world::reference_3d"
+  ],
+  "crates/oblivion_sim/src/bs/kf_model.rs": [
+    "oblivion_sim::tes::actors::anim_group",
+    "oblivion_sim::tes::data::reference_load"
+  ],
+  "crates/oblivion_sim/src/bs/model_loader.rs": [
+    "oblivion_sim::tes::actors::helmet_tasks",
+    "oblivion_sim::tes::data::reference_load",
+    "oblivion_sim::tes::facegen::face_gen_tasks",
+    "oblivion_sim::tes::forms::forms_references",
+    "oblivion_sim::tes::world::reference_3d",
+    "oblivion_sim::tes::world::tes_grid"
+  ],
+  "crates/oblivion_sim/src/bs/ragdoll.rs": [
+    "oblivion_sim::tes::settings::blend_settings"
+  ],
+  "crates/oblivion_sim/src/bs/scene_graphs.rs": [
+    "oblivion_sim::tes::settings"
+  ],
+  "crates/oblivion_sim/src/bs/task_manager.rs": [
+    "oblivion_sim::tes::os::movie_player",
+    "oblivion_sim::tes::os::os_globals"
+  ],
+  "crates/oblivion_sim/src/bs/tree_manager.rs": [
+    "oblivion_sim::tes::settings"
+  ],
+  "crates/oblivion_sim/src/gamebryo/clone.rs": [
+    "oblivion_sim::bs::fade_node",
+    "oblivion_sim::bs::havok_stream",
+    "oblivion_sim::bs::sky_shader"
+  ],
+  "crates/oblivion_sim/src/gamebryo/clone_animation.rs": [
+    "oblivion_sim::bs::sky_shader"
+  ],
+  "crates/oblivion_sim/src/gamebryo/clone_particles.rs": [
+    "oblivion_sim::bs::sky_shader",
+    "oblivion_sim::tes::world::reference_3d"
+  ],
+  "crates/oblivion_sim/src/gamebryo/particle_system.rs": [
+    "oblivion_sim::bs::nif_objects"
+  ],
+  "crates/oblivion_sim/src/gamebryo/registration.rs": [
+    "oblivion_sim::bs::havok_stream",
+    "oblivion_sim::bs::nif_objects"
+  ],
+  "crates/oblivion_sim/src/gamebryo/renderer.rs": [
+    "oblivion_sim::tes::settings"
+  ],
+  "crates/oblivion_sim/src/gamebryo/scene_update.rs": [
+    "oblivion_sim::bs::havok_stream",
+    "oblivion_sim::bs::model_loader"
+  ],
+  "crates/oblivion_sim/src/gamebryo/shader_runtime.rs": [
+    "oblivion_sim::bs::shader_programs",
+    "oblivion_sim::bs::shader_tables"
+  ],
+  "crates/oblivion_sim/src/gamebryo/stream_graph.rs": [
+    "oblivion_sim::bs::havok_stream",
+    "oblivion_sim::bs::nif_objects",
+    "oblivion_sim::tes::settings::blend_settings"
+  ],
+  "crates/oblivion_sim/src/gamebryo/texture_loading.rs": [
+    "oblivion_sim::bs::file"
+  ]
+}

@@ -13,7 +13,7 @@ fn window_opens_at_the_ini_size() {
     std::fs::create_dir_all(&folder).unwrap();
     let ini = folder.join("Oblivion.ini");
     std::fs::write(&ini, "[Display]\niSize W=1280\niSize H=720\n").unwrap();
-    let output = Command::new(env!("CARGO_BIN_EXE_OblivionRecompBevy"))
+    let output = Command::new(env!("CARGO_BIN_EXE_oblivion"))
         .arg("--ini")
         .arg(&ini)
         .args(["--exit-after-frames", "1"])

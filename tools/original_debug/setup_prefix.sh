@@ -7,10 +7,9 @@ repo=$(cd "$(dirname "$0")/../.." && pwd)
 prefix="$HOME/.wine-oblivion-capture"
 [ ! -e "$prefix" ] || { echo "exists: $prefix" >&2; exit 1; }
 mkdir "$prefix"
-wine_user=${OBLIVION_WINE_USER:-$(id -un)}
-rsync -a --exclude="drive_c/users/$wine_user/Documents/" --exclude="drive_c/users/$wine_user/AppData/Local/Oblivion/" \
+rsync -a --exclude='drive_c/users/natfoth/Documents/' --exclude='drive_c/users/natfoth/AppData/Local/Oblivion/' \
     "$HOME/.wine-oblivion/" "$prefix/"
-user="$prefix/drive_c/users/$wine_user"
+user="$prefix/drive_c/users/natfoth"
 for name in Desktop Downloads Music Pictures Videos; do
     [ -L "${user:?}/${name:?}" ] && rm -- "${user:?}/${name:?}"
     mkdir -p "$user/$name"

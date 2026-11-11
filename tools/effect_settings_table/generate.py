@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
-"""Generate tes/effect_settings_table.rs from the C++ table, which came from evidence/phase12-window-2026-10-09/effects-builtin.tsv in IDA, and check every row against the push arguments of the 00417220 calls in 00417420, read with objdump from the evidence binary."""
-import os
+"""Generate tes/forms/effect_settings_table.rs from the C++ table, which came from evidence/phase12-window-2026-10-09/effects-builtin.tsv in IDA, and check every row against the push arguments of the 00417220 calls in 00417420, read with objdump from the evidence binary."""
 import re
 import subprocess
 
-SRC = os.path.join(os.environ.get('OBLIVION_CPP_DIR', '../OblivionRecomp'), 'src/tes/effect_settings_table.inc')
-OUT = 'crates/recomp_game/src/tes/effect_settings_table.rs'
-EXE = os.environ.get('OBLIVION_EXE', '../OblivionBot/Oblivion.exe')
+SRC = '/run/media/natfoth/Echo/OblivionRecomp/src/tes/effect_settings_table.inc'
+OUT = 'crates/oblivion_sim/src/tes/forms/effect_settings_table.rs'
+EXE = '/run/media/natfoth/Echo/OblivionBot/Oblivion.exe'
 ROW = re.compile(r'^\{(0x[0-9A-F]+)U, (0x[0-9A-F]+)U, ("(?:[^"\\]|\\.)*"), (0x[0-9A-F]+)U, (0x[0-9A-F]+)U, (0x[0-9A-F]+)U, (0x[0-9A-F]+)U, (0x[0-9A-F]+)U, (\d+), \{([^}]*)\}\},$')
 
 rows = []

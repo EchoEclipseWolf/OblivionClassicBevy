@@ -1,0 +1,11 @@
+[package]
+name = "oblivion_physics"
+version = "0.1.0"
+edition = "2024"
+
+# IDA: N/A the host's physics behind the game's seam (`oblivion_sim::bs::physics_seam`): Avian, a recorded substitution for
+# Havok (docs/target-a-plan-2026-11-07.md). Its own Bevy app per Havok world, so the game's World never holds Avian.
+[dependencies]
+avian3d.workspace = true
+bevy = { version = "0.20.1", default-features = false, features = ["std", "bevy_asset", "bevy_mesh"] }
+oblivion_sim.workspace = true

@@ -1,0 +1,7 @@
+# Verified duplicate definition claims. Each line gives the IDA entry and the reviewed reason.
+0042BB90 The renderer's pointer array and the form loader's item array implement NiTArray_AddAtIndex for their slot representations.
+00446CB0 The core pointer list and the actor process manager's entity-backed list each implement prepend and retain the original head.
+004E4A10 Both the renderer and item-form arrays implement NiTArray_SetSize with capacity and slot counts.
+0067B1E0 The core pointer list and the actor process manager's entity-backed list both walk to and append at the tail.
+005FCAB0 The race menu's interface wrapper for the player and the shared implementation it calls both annotate Actor_UpdateAnimationGroups.
+00446C50 NiTLargeArray_SetAt is written once per instantiation (the form array, the interior cell array, the u32 array); one generic is owed (placement audit, section 2d).

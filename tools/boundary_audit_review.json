@@ -452,7 +452,7 @@
     ],
     [
      "0040EF54",
-     "The no-cell jump, the driver's own line at winmain.rs:2503."
+     "The no-cell jump, reported by tes/winmain/mod.rs in the Phase-16 row using placed.reached_0040ef54."
     ],
     [
      "00720B40",

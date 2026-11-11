@@ -5,15 +5,15 @@ from the C++ repository unchanged. It is a bounded expansion, not the transitive
 sites without one resolved reference stay unknown.
 
 `dispositions.json` is copied from the C++ repository too, and **records the C++ port**. `implemented_behavior` there means
-the C++ port has that body. It does not mean this repository does. What Rust has so far is
-`crates/recomp_startup/src/scaffold.rs`'s `RUST_PORTED_THROUGH`, and the milestone table in `docs/migration-plan.md`.
+the C++ port has that body. It does not mean this repository does. What Rust has is in `CLAUDE.md`'s "Current state"
+and `docs/open-items.md`. `RUST_PORTED_THROUGH` in `crates/oblivion_testkit/src/scaffold.rs` records the cutover through Phase 22.
 
 ```sh
 python3 tools/startup_roadmap/generate.py
 cargo fmt --all
 ```
 
-This writes `crates/recomp_startup/src/scaffold_data.rs` and `summary.json`. The output is inert metadata: no original
+This writes `crates/oblivion_testkit/src/scaffold_data.rs` and `summary.json`. The output is inert metadata: no original
 address can be called, and a stub never reports success. Follow block successor edges; never run the address-sorted call
 array as a job list.
 

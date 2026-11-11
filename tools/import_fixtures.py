@@ -10,7 +10,6 @@ C++ tests compare against. Hashes ignore CR, because the C++ working tree has CR
 import ast
 import hashlib
 import json
-import os
 import shutil
 import subprocess
 import sys
@@ -22,7 +21,7 @@ ROOT = Path(__file__).resolve().parent.parent
 ECHO = ROOT.parent
 CPP = ECHO / "OblivionRecomp"
 NOTES = ECHO / "OblivionBotInfos/Recomp/StartupLoading"
-WINDOWS_PROFILE = Path(os.environ.get("OBLIVION_WINDOWS_PROFILE", "../windows-profile"))
+OLD_C = Path("/run/media/natfoth/300439110438DC12")
 OUT = ROOT / "fixtures"
 INC_DIR = CPP / "tests/startup"
 
@@ -99,13 +98,13 @@ BASELINE = {
 }
 # The files the evidence runs used, not the Wine prefix's copies.
 CONFIG = {
-    "Oblivion.ini": (WINDOWS_PROFILE / "OneDrive/Documents/My Games/Oblivion/Oblivion.ini",
+    "Oblivion.ini": (OLD_C / "Users/natfo/OneDrive/Documents/My Games/Oblivion/Oblivion.ini",
                      "d243541f17453f0f86db767633b96690ba6f94ee4e501c2b636e69e3a06c0fe3"),
-    "Plugins.txt": (WINDOWS_PROFILE / "AppData/Local/Oblivion/Plugins.txt",
+    "Plugins.txt": (OLD_C / "Users/natfo/AppData/Local/Oblivion/Plugins.txt",
                     "f2e65b7cad007c1e686517ac4eec6238139df0d0fa50cb8dd21955639c3141d6"),
-    "BlendSettings.ini": (WINDOWS_PROFILE / "OneDrive/Documents/My Games/Oblivion/BlendSettings.ini",
+    "BlendSettings.ini": (OLD_C / "Users/natfo/OneDrive/Documents/My Games/Oblivion/BlendSettings.ini",
                           "4fa5e2568cf1e3b5eff585c345605d96ffa8af1be5f6ffc97163439c6db576b7"),
-    "BlendSettings-version.ini": (WINDOWS_PROFILE / "AppData/Local/VirtualStore/Windows/BlendSettings.ini",
+    "BlendSettings-version.ini": (OLD_C / "Users/natfo/AppData/Local/VirtualStore/Windows/BlendSettings.ini",
                                   "db2774c2861e151e06e4bc00088cf5cb12c1e721b657d2e2408a496f57c7566a"),
 }
 
@@ -228,6 +227,31 @@ def build():
     # The prison NPCs' FaceGen heads in run-af's after_move, by tools/original_debug/facegen_nodes_rows.py (FaceGen agent).
     source = NOTES / "evidence" / "gameplay-run002-2026-11-07" / "facegen_nodes.rows"
     out = OUT / "rows" / "facegen_nodes.rows"
+    shutil.copyfile(source, out)
+    record(out, source, text_sha(source))
+    # The prison's path grid in run-af's after_move, by tools/original_debug/pathing_prison_rows.py (pathing agent).
+    source = NOTES / "evidence" / "gameplay-run002-2026-11-07" / "pathing_prison.rows"
+    out = OUT / "rows" / "pathing_prison.rows"
+    shutil.copyfile(source, out)
+    record(out, source, text_sha(source))
+    # The same grid in run-x's frame_after_move, after command 65 (DisableLinkedPathPoints on 3E31C), likewise.
+    source = NOTES / "evidence" / "gameplay-run002-2026-11-07" / "pathing_prison_frame.rows"
+    out = OUT / "rows" / "pathing_prison_frame.rows"
+    shutil.copyfile(source, out)
+    record(out, source, text_sha(source))
+    # The end of the move's frame in run-x's frame_after_move, by tools/original_debug/frame_after_move_rows.py (Build 4).
+    source = NOTES / "evidence" / "gameplay-run002-2026-11-07" / "frame_after_move.rows"
+    out = OUT / "rows" / "frame_after_move.rows"
+    shutil.copyfile(source, out)
+    record(out, source, text_sha(source))
+    # The race menu changing step by step in run-aq, by tools/original_debug/race_menu_rows.py (Build 5's C7).
+    source = NOTES / "evidence" / "gameplay-run002-2026-11-07" / "race_menu_run_aq.rows"
+    out = OUT / "rows" / "race_menu_run_aq.rows"
+    shutil.copyfile(source, out)
+    record(out, source, text_sha(source))
+    # The race menu's Age at five stages in run-at, by the same tool.
+    source = NOTES / "evidence" / "gameplay-run002-2026-11-07" / "race_menu_run_at.rows"
+    out = OUT / "rows" / "race_menu_run_at.rows"
     shutil.copyfile(source, out)
     record(out, source, text_sha(source))
     for name, relative in EXTRA_EVIDENCE.items():

@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-"""Generate tes/game_settings_table.rs from the C++ table, which came from the Phase 07 GMST extraction in IDA."""
-import os
+"""Generate tes/settings/game_settings_table.rs from the C++ table, which came from the Phase 07 GMST extraction in IDA."""
 import re
-SRC = os.path.join(os.environ.get('OBLIVION_CPP_DIR', '../OblivionRecomp'), 'src/tes/game_settings_table.inc')
-OUT = 'crates/recomp_game/src/tes/game_settings_table.rs'
+SRC = '/run/media/natfoth/Echo/OblivionRecomp/src/tes/game_settings_table.inc'
+OUT = 'crates/oblivion_sim/src/tes/settings/game_settings_table.rs'
 ROW = re.compile(r'^\{(\d+), (0x[0-9A-F]+)U, (0x[0-9A-F]+)U, \'(.)\', ("(?:[^"\\]|\\.)*"|nullptr), (0x[0-9A-F]+)U, ("(?:[^"\\]|\\.)*"|nullptr)\},$')
 def opt(token):
     return 'None' if token == 'nullptr' else f'Some({token})'

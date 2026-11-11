@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate crates/recomp_game/src/tes/condition_tables.rs from the evidence binary's .data bytes.
+"""Generate crates/oblivion_sim/src/tes/ai/condition_tables.rs from the evidence binary's .data bytes.
 
 00B0C8C0 is the condition function table, 0x171 rows of 0x28 bytes: +0x00 the name, +0x10 byte requires a subject,
 +0x12 u16 parameter count, +0x14 the 12-byte parameter infos (+0x04 the kind), +0x20 the handler.
@@ -7,14 +7,13 @@
 The C++ port's two .inc files are checked against the same bytes, and a difference stops the run. Run from the
 repository root.
 """
-import os
 import re
 import struct
 
-EXE = os.environ.get('OBLIVION_EXE', '../OblivionBot/Oblivion.exe')
-OUT = 'crates/recomp_game/src/tes/condition_tables.rs'
-CPP_FUNCTIONS = os.path.join(os.environ.get('OBLIVION_CPP_DIR', '../OblivionRecomp'), 'src/tes/condition_functions.inc')
-CPP_DISPATCH = os.path.join(os.environ.get('OBLIVION_CPP_DIR', '../OblivionRecomp'), 'src/tes/condition_dispatch.inc')
+EXE = '/run/media/natfoth/Echo/OblivionBot/Oblivion.exe'
+OUT = 'crates/oblivion_sim/src/tes/ai/condition_tables.rs'
+CPP_FUNCTIONS = '/run/media/natfoth/Echo/OblivionRecomp/src/tes/condition_functions.inc'
+CPP_DISPATCH = '/run/media/natfoth/Echo/OblivionRecomp/src/tes/condition_dispatch.inc'
 FUNCTIONS = 0x00B0C8C0
 KINDS = 0x00B0A548
 PROCEDURE_ROWS = 0x00B152B0

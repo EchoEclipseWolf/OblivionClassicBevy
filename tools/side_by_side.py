@@ -1,18 +1,23 @@
 #!/usr/bin/env python3
 """The M7 gate's table: G1 to G6 on one commit (G4 by tools/boundary_audit.py) (docs/migration-plan.md, "The gate").
 
-    python3 tools/virtual_display.py start ${XDG_RUNTIME_DIR}/ob-gate
-    python3 tools/virtual_display.py exec ${XDG_RUNTIME_DIR}/ob-gate -- python3 tools/side_by_side.py run
-    python3 tools/virtual_display.py exec ${XDG_RUNTIME_DIR}/ob-gate -- python3 tools/side_by_side.py mutate
-    python3 tools/virtual_display.py exec ${XDG_RUNTIME_DIR}/ob-gate -- python3 tools/side_by_side.py g5 --cpp-captures DIR
+    python3 tools/virtual_display.py start /run/user/1000/ob-gate
+    systemd-run --user --scope --quiet --collect -p MemoryMax=24G -p MemorySwapMax=0 \
+      python3 tools/virtual_display.py exec /run/user/1000/ob-gate -- env RUST_TEST_THREADS=1 python3 tools/side_by_side.py run
+    python3 tools/virtual_display.py exec /run/user/1000/ob-gate -- python3 tools/side_by_side.py mutate
+    python3 tools/virtual_display.py exec /run/user/1000/ob-gate -- python3 tools/side_by_side.py g5 --cpp-captures DIR
     python3 tools/side_by_side.py report
-    python3 tools/virtual_display.py stop ${XDG_RUNTIME_DIR}/ob-gate
+    python3 tools/virtual_display.py stop /run/user/1000/ob-gate
 
 `run` executes every test binary of the workspace, one at a time, with OBLIVION_ROW_LEDGER set, and the real
 binary for the G3 lines. `mutate` changes rows in a scratch copy of fixtures/ and sees whether any test notices:
 that is the only count here of rows no test compares, since a tracker's "read" doesn't say a value was compared.
-`report` prints what the last `run`, `mutate` and `g5` left in <target>/side_by_side, and never runs anything but
-the G6 source scan and git.
+`report` prints what the last `run`, `mutate` and `g5` left in <target>/side_by_side; for G6 it runs git, the
+source label scan and `cargo fmt --all --check` (and workspace clippy with `--clippy`), and writes labels-missing.json.
+
+Run `run` and `mutate` inside a memory-capped scope, as above (`AGENTS.md`, Build and test): `run` takes each binary
+one at a time but a binary's tests in parallel unless RUST_TEST_THREADS=1, and the New Game driver tests peak at about
+8 GB each. `mutate` defaults to 3 jobs; 6 hit a 24 GB cap.
 
 No number below is a constant that restates an expected answer. The only hand-written data is TOLERANCES: which G3
 fields may differ and why. The values come from the runs, the logs and the evidence.
@@ -183,7 +188,7 @@ def command_run(args):
 def app_binary():
     env = environment()
     env["CARGO_TARGET_DIR"] = str(TARGET)
-    done = subprocess.run(["cargo", "build", "--bin", "OblivionRecompBevy", "--message-format=json"],
+    done = subprocess.run(["cargo", "build", "--bin", "oblivion", "--message-format=json"],
                           cwd=ROOT, env=env, capture_output=True, text=True)
     for line in done.stdout.splitlines():
         try:

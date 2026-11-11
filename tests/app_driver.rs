@@ -23,7 +23,7 @@ fn require_display() {
 }
 
 fn app() -> Command {
-    let mut command = Command::new(env!("CARGO_BIN_EXE_OblivionRecompBevy"));
+    let mut command = Command::new(env!("CARGO_BIN_EXE_oblivion"));
     command.env("OBLIVION_DATA_DIR", data_dir());
     command
 }
@@ -52,7 +52,7 @@ fn baseline() -> Vec<String> {
         .collect()
 }
 
-// The declared tolerances, as `recomp_startup/tests/winmain_driver.rs` gives their reasons.
+// The declared tolerances, as `oblivion_testkit/tests/winmain_driver.rs` gives their reasons.
 fn tolerant(line: &str) -> String {
     // The C++ stops at 11 of these models, and the original builds all 26 (`the_driver_builds_the_recorded_model_trees`).
     if line.starts_with("Phase-13e:") {

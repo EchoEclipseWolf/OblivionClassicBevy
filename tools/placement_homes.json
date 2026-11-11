@@ -1,0 +1,638 @@
+{
+ "about": "Where each owner class is filed. `python3 tools/placement.py check` fails when a function headed `Class_Action` is outside its class's homes and isn't a reviewed exception, and when a class has no rule. The first rule whose pattern matches the class decides. A home is a file or a folder (trailing /); `{snake}` is the class in snake case; `*` is anywhere. Edit by hand: a new class gets a rule when its first function is written (AGENTS.md, \"One port per original function\").",
+ "rules": [
+  {
+   "classes": "^(g|Vec3|Vector|GetAV|Cmd|Form|FormID|FormType|ReturnThisPlus4|GetField40|Float|Input|Music|Sound|Magic|MagicCost|Particle|Oblivion|Interface|UI|HUD|D3D9|DebugLog|DebugMessage|Combat|GameTime|Expression|ProcedureType|EffectCode|ActorValue|PathParts|SkillLevel|Random|WrappedAngle16|SceneNode)$",
+   "homes": [
+    "*"
+   ],
+   "why": "a name prefix in the database, not a class"
+  },
+  {
+   "classes": "^(NiT[A-Z]\\w*|NiFormArray|PointerList|BSSimpleList|BSTCaseInsensitiveStringMap|LockFree\\w*)$",
+   "homes": [
+    "*"
+   ],
+   "why": "a template, written once per instantiation today; one generic each is owed (the audit's 2d groups)"
+  },
+  {
+   "classes": "^Tile\\w*$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/interface/"
+   ],
+   "why": "AGENTS.md: InterfaceManager, Menu, Tile"
+  },
+  {
+   "classes": "^RaceSexMenu$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/menus/race_sex_menu.rs",
+    "crates/oblivion_sim/src/tes/menus/race_sex_menu_frame.rs"
+   ],
+   "why": "the menu and its frame"
+  },
+  {
+   "classes": "^(?!Menu$)\\w+Menu$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/menus/{snake}.rs"
+   ],
+   "why": "AGENTS.md: each XMenu in its own file"
+  },
+  {
+   "classes": "^(InterfaceManager|Menu)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/interface/"
+   ],
+   "why": "AGENTS.md: InterfaceManager, Menu, Tile"
+  },
+  {
+   "classes": "^(BSFaceGen\\w*|FaceGen\\w*)$",
+   "homes": [
+    "crates/oblivion_sim/src/bs/",
+    "crates/oblivion_sim/src/tes/facegen/"
+   ],
+   "why": "FaceGen's files and models in bs/, the head built from them in tes/facegen/"
+  },
+  {
+   "classes": "^Ni",
+   "homes": [
+    "crates/oblivion_sim/src/gamebryo/"
+   ],
+   "why": "AGENTS.md: Ni* in gamebryo/"
+  },
+  {
+   "classes": "^(BS|bhk|hk)|Shader$|^(WaterShader\\w*|SkyShaderProperty|ShadowScene\\w*|ShaderPackage|Archive\\w*|CompressedArchiveFile|FileFinder|ModelLoader|Model|ModelPath|ModelPtr|Queued(Model|File|KF|Reference)|KFModel|IOManager|IOTask|SceneGraph|RagDollData|CSpeedTreeRT|BackgroundCloneThread|ResumeThread|HavokError|HavokVector|Texture)$",
+   "homes": [
+    "crates/oblivion_sim/src/bs/"
+   ],
+   "why": "AGENTS.md: BS*, bhk*, archives, shaders, task and IO managers in bs/"
+  },
+  {
+   "classes": "^BSAHash$",
+   "homes": [
+    "crates/oblivion_core/",
+    "crates/oblivion_sim/src/bs/"
+   ],
+   "why": "AGENTS.md: hashes in oblivion_core"
+  },
+  {
+   "classes": "^TimeGlobals$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/forms/global.rs"
+   ],
+   "why": "AGENTS.md"
+  },
+  {
+   "classes": "^OSGlobals$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/os/",
+    "crates/oblivion_sim/src/tes/winmain/game_frame.rs"
+   ],
+   "why": "AGENTS.md: OSGlobals in tes/os/; the idle frame's steps (0040D800) are the GameFrame's systems"
+  },
+  {
+   "classes": "^(OSSoundGlobals|OSInputGlobals|OSGlobalsData|Renderer)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/os/"
+   ],
+   "why": "AGENTS.md: OSGlobals and the game's Renderer_* creation in tes/os/"
+  },
+  {
+   "classes": "^RendererUIState$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/interface/faders.rs",
+    "crates/oblivion_sim/src/tes/os/renderer_init.rs"
+   ],
+   "why": "the interface's faders; its construction with the renderer's"
+  },
+  {
+   "classes": "^StartupCallbacks$",
+   "homes": [
+    "crates/oblivion_sim/src/gamebryo/registration.rs"
+   ],
+   "why": "gamebryo's registration callbacks"
+  },
+  {
+   "classes": "^(Startup|WinMain)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/winmain/"
+   ],
+   "why": "AGENTS.md: tes::winmain owns the WinMain blocks and Startup_* routines"
+  },
+  {
+   "classes": "^Actor$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/actors/",
+    "crates/oblivion_sim/src/tes/ai/detection.rs"
+   ],
+   "why": "AGENTS.md: Actor in tes/actors/, detection in tes/ai/"
+  },
+  {
+   "classes": "^(Character|PlayerCharacter|Creature|MobileObject|\\w+Process|ActorProcessManager|ActorProcessList|ActorAnimData|SkinInfo|ContainerChanges|InventoryEntry|ExtraContainerChanges\\w*)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/actors/"
+   ],
+   "why": "AGENTS.md: Actor, Character, PlayerCharacter, the process classes, ContainerChanges, equipment"
+  },
+  {
+   "classes": "^TESAnimGroup$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/actors/anim_group.rs"
+   ],
+   "why": "the animation group has its own file"
+  },
+  {
+   "classes": "^(TESPathGrid\\w*)$",
+   "homes": [
+    "crates/oblivion_pathing/",
+    "crates/oblivion_sim/src/tes/world/path_search.rs",
+    "crates/oblivion_sim/src/tes/world/pathing.rs",
+    "crates/oblivion_sim/src/tes/forms/"
+   ],
+   "why": "the grid's search is the pathing crate; the form's record load is tes/forms/"
+  },
+  {
+   "classes": "^(TESPackage\\w*|Package\\w*|TESCondition\\w*|Detection\\w*)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/ai/",
+    "crates/oblivion_sim/src/tes/forms/forms_ai.rs"
+   ],
+   "why": "AGENTS.md: TESPackage, conditions, detection in tes/ai/; the form's record in forms_ai.rs"
+  },
+  {
+   "classes": "^TESObjectREFR$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/forms/",
+    "crates/oblivion_sim/src/tes/world/reference_3d.rs",
+    "crates/oblivion_sim/src/tes/actors/inventory.rs",
+    "crates/oblivion_sim/src/tes/actors/inventory_entries.rs",
+    "crates/oblivion_sim/src/tes/actors/equipment.rs",
+    "crates/oblivion_sim/src/tes/actors/equipment_3d.rs",
+    "crates/oblivion_sim/src/tes/actors/biped_attach.rs"
+   ],
+   "why": "AGENTS.md: forms_references.rs, its 3D in reference_3d.rs, its inventory and equipment in tes/actors/"
+  },
+  {
+   "classes": "^(TESNPC|TESRace|TESBipedModelForm)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/forms/",
+    "crates/oblivion_sim/src/tes/actors/character_3d.rs",
+    "crates/oblivion_sim/src/tes/facegen/"
+   ],
+   "why": "the form in tes/forms/; the NPC's 3D in character_3d.rs, its head in tes/facegen/"
+  },
+  {
+   "classes": "^TESBoundObject$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/forms/",
+    "crates/oblivion_sim/src/tes/world/reference_3d.rs"
+   ],
+   "why": "the form in tes/forms/; its 3D with the reference's"
+  },
+  {
+   "classes": "^TESObjectLIGH$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/forms/",
+    "crates/oblivion_sim/src/tes/world/light_3d.rs"
+   ],
+   "why": "the form in tes/forms/; its 3D in light_3d.rs"
+  },
+  {
+   "classes": "^(TESWaterNodeRecord|TESWaterSurfaceRecord|TESWater)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/forms/",
+    "crates/oblivion_sim/src/tes/world/water.rs"
+   ],
+   "why": "the form in tes/forms/; the water records and their geometry in water.rs"
+  },
+  {
+   "classes": "^(TESObjectCELL|TESWorldSpace|TESObjectLAND)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/forms/",
+    "crates/oblivion_sim/src/tes/world/"
+   ],
+   "why": "AGENTS.md: forms_world.rs, tes/world/"
+  },
+  {
+   "classes": "^(TES|Sky|Sun|Moon|Clouds|Stars|Atmosphere|Precipitation|SkyObject|GridArray|GridCellArray|GridDistantArray|TerrainLOD\\w*)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/world/",
+    "crates/oblivion_sim/src/tes/forms/forms_world.rs"
+   ],
+   "why": "AGENTS.md: TES in tes/world/"
+  },
+  {
+   "classes": "^(DataHandler|TESSaveLoadGame|TESFile|TESFileData|TESRecord)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/data/"
+   ],
+   "why": "the DataHandler, the files and the save game in tes/data/"
+  },
+  {
+   "classes": "^(Script|ScriptEventList|ScriptRunner)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/forms/forms_script.rs",
+    "crates/oblivion_sim/src/tes/script/"
+   ],
+   "why": "the form in forms_script.rs, the VM in tes/script/"
+  },
+  {
+   "classes": "^(TES\\w+|Extra\\w+|BaseExtraList|EffectItem\\w*|MagicItem|SpellItem|EnchantmentItem|EffectSetting\\w*|MagicSystem|Setting\\w*|GameSettingCollection|IniSettingCollection|BlendSettings|Quest\\w+|TopicList|TopicInfoArray|CreatureSounds|IdleAnimRoot\\w*|CellRegionLock|GridKey)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/forms/",
+    "crates/oblivion_sim/src/tes/settings/",
+    "crates/oblivion_core/src/crt.rs"
+   ],
+   "why": "AGENTS.md: TESForm, its components and the extra lists in tes/forms/; settings in tes/settings/"
+  },
+  {
+   "classes": "^(PathingLocation)$",
+   "homes": [
+    "crates/oblivion_pathing/src/cost.rs"
+   ],
+   "why": "where the class is filed (first table, 2026-11-11)"
+  },
+  {
+   "classes": "^(AStarNode)$",
+   "homes": [
+    "crates/oblivion_pathing/src/grid.rs"
+   ],
+   "why": "where the class is filed (first table, 2026-11-11)"
+  },
+  {
+   "classes": "^(AStarNodeList)$",
+   "homes": [
+    "crates/oblivion_pathing/src/search.rs"
+   ],
+   "why": "where the class is filed (first table, 2026-11-11)"
+  },
+  {
+   "classes": "^(PathGridSearch)$",
+   "homes": [
+    "crates/oblivion_pathing/src/search.rs",
+    "crates/oblivion_sim/src/tes/world/path_search.rs"
+   ],
+   "why": "where the class is filed (first table, 2026-11-11)"
+  },
+  {
+   "classes": "^(ShaderRuntimePool100|ShaderRuntimePool16|ShaderRuntimePool20|ShaderRuntimePool96)$",
+   "homes": [
+    "crates/oblivion_sim/src/gamebryo/shader_runtime.rs"
+   ],
+   "why": "where the class is filed (first table, 2026-11-11)"
+  },
+  {
+   "classes": "^(Wildcard)$",
+   "homes": [
+    "crates/oblivion_sim/src/gamebryo/wildcard.rs"
+   ],
+   "why": "where the class is filed (first table, 2026-11-11)"
+  },
+  {
+   "classes": "^(AnimSequenceMap)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/actors/actor_animation.rs"
+   ],
+   "why": "where the class is filed (first table, 2026-11-11)"
+  },
+  {
+   "classes": "^(PathGrid)$",
+   "homes": [
+    "crates/oblivion_pathing/",
+    "crates/oblivion_sim/src/tes/world/path_search.rs"
+   ],
+   "why": "the class has its own file"
+  },
+  {
+   "classes": "^(ActorValues)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/actors/actor_process.rs"
+   ],
+   "why": "where the class is filed (first table, 2026-11-11)"
+  },
+  {
+   "classes": "^(BoundItemEffect)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/actors/bound_item.rs"
+   ],
+   "why": "the class has its own file"
+  },
+  {
+   "classes": "^(QueuedCharacter|QueuedCreature|QueuedPlayer)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/actors/character_3d.rs"
+   ],
+   "why": "where the class is filed (first table, 2026-11-11)"
+  },
+  {
+   "classes": "^(CameraCollisionHelper|CollisionQueryHelper)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/actors/character_controller.rs"
+   ],
+   "why": "where the class is filed (first table, 2026-11-11)"
+  },
+  {
+   "classes": "^(QueuedHelmet)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/actors/helmet_tasks.rs"
+   ],
+   "why": "where the class is filed (first table, 2026-11-11)"
+  },
+  {
+   "classes": "^(ActiveEffect|MagicCaster|MagicTarget|ValueModifierEffect)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/actors/magic_cast.rs"
+   ],
+   "why": "where the class is filed (first table, 2026-11-11)"
+  },
+  {
+   "classes": "^(QueuedMagicItem)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/actors/magic_selection.rs"
+   ],
+   "why": "where the class is filed (first table, 2026-11-11)"
+  },
+  {
+   "classes": "^(MoviePlayer)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/os/movie_player.rs"
+   ],
+   "why": "the class has its own file"
+  },
+  {
+   "classes": "^(Condition|ConditionFunction)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/ai/ai_conditions.rs"
+   ],
+   "why": "where the class is filed (first table, 2026-11-11)"
+  },
+  {
+   "classes": "^(FgRandom)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/facegen/face_gen_head.rs"
+   ],
+   "why": "where the class is filed (first table, 2026-11-11)"
+  },
+  {
+   "classes": "^(FanControls|FgMatrix)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/facegen/face_gen_head.rs",
+    "crates/oblivion_sim/src/tes/facegen/mod.rs"
+   ],
+   "why": "where the class is filed (first table, 2026-11-11)"
+  },
+  {
+   "classes": "^(QueuedHead)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/facegen/face_gen_nodes.rs",
+    "crates/oblivion_sim/src/tes/facegen/face_gen_tasks.rs"
+   ],
+   "why": "where the class is filed (first table, 2026-11-11)"
+  },
+  {
+   "classes": "^(FanLinearControls|FutBinaryFileC)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/facegen/mod.rs"
+   ],
+   "why": "where the class is filed (first table, 2026-11-11)"
+  },
+  {
+   "classes": "^(FgFloatVector)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/facegen/mod.rs"
+   ],
+   "why": "the class has its own file"
+  },
+  {
+   "classes": "^(PathingWorldNodeMap)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/world/pathing.rs"
+   ],
+   "why": "the class has its own file"
+  },
+  {
+   "classes": "^(FontManager)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/interface/fonts.rs"
+   ],
+   "why": "where the class is filed (first table, 2026-11-11)"
+  },
+  {
+   "classes": "^(FontInfo)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/interface/fonts.rs",
+    "crates/oblivion_sim/src/tes/interface/interface_text.rs"
+   ],
+   "why": "where the class is filed (first table, 2026-11-11)"
+  },
+  {
+   "classes": "^(TimedTransition)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/interface/interface_frame.rs"
+   ],
+   "why": "where the class is filed (first table, 2026-11-11)"
+  },
+  {
+   "classes": "^(FontTextLayout)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/interface/interface_text.rs"
+   ],
+   "why": "where the class is filed (first table, 2026-11-11)"
+  },
+  {
+   "classes": "^(HUDReticle)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/menus/hud_reticle.rs"
+   ],
+   "why": "where the class is filed (first table, 2026-11-11)"
+  },
+  {
+   "classes": "^(RaceSexToggle)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/menus/race_sex_menu.rs"
+   ],
+   "why": "where the class is filed (first table, 2026-11-11)"
+  },
+  {
+   "classes": "^(MenuTextInputState)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/menus/text_edit_menu.rs"
+   ],
+   "why": "where the class is filed (first table, 2026-11-11)"
+  },
+  {
+   "classes": "^(SoundInstance)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/os/game_sounds.rs"
+   ],
+   "why": "where the class is filed (first table, 2026-11-11)"
+  },
+  {
+   "classes": "^(MoviePlayerMovie|MovieTileSet)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/os/movie_player.rs"
+   ],
+   "why": "where the class is filed (first table, 2026-11-11)"
+  },
+  {
+   "classes": "^(ShaderSystem)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/os/shader_system.rs"
+   ],
+   "why": "where the class is filed (first table, 2026-11-11)"
+  },
+  {
+   "classes": "^(TimeInfo)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/os/window.rs"
+   ],
+   "why": "where the class is filed (first table, 2026-11-11)"
+  },
+  {
+   "classes": "^(CopyProtection)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/winmain/path_setup.rs"
+   ],
+   "why": "where the class is filed (first table, 2026-11-11)"
+  },
+  {
+   "classes": "^(LightAttenuation)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/world/light_3d.rs"
+   ],
+   "why": "where the class is filed (first table, 2026-11-11)"
+  },
+  {
+   "classes": "^(BackgroundLoaderThread|PathBuilder)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/world/pathing.rs"
+   ],
+   "why": "where the class is filed (first table, 2026-11-11)"
+  },
+  {
+   "classes": "^(ChangesMap)$",
+   "homes": [
+    "crates/oblivion_sim/src/tes/data/save_load_game.rs"
+   ],
+   "why": "the save game's change map, with TESSaveLoadGame"
+  }
+ ],
+ "exceptions": {
+  "crates/oblivion_core/src/hash.rs::bsa_name_hash": "an x87 or hash helper of the core crate, headed by the function whose arithmetic it holds",
+  "crates/oblivion_core/src/hash.rs::bsa_rolling_hash": "an x87 or hash helper of the core crate, headed by the function whose arithmetic it holds",
+  "crates/oblivion_core/src/x87.rs::float_fmod": "an x87 or hash helper of the core crate, headed by the function whose arithmetic it holds",
+  "crates/oblivion_core/src/x87.rs::truncated_low16": "an x87 or hash helper of the core crate, headed by the function whose arithmetic it holds",
+  "crates/oblivion_core/src/x87.rs::u32_to_x87_float": "an x87 or hash helper of the core crate, headed by the function whose arithmetic it holds",
+  "crates/oblivion_host/src/cell_lighting.rs::color_bytes": "the host's presentation of the function's result (a host substitution), above the simulation",
+  "crates/oblivion_host/src/cell_lighting.rs::directional_direction": "the host's presentation of the function's result (a host substitution), above the simulation",
+  "crates/oblivion_host/src/screens.rs::draw_screens": "the host's presentation of the function's result (a host substitution), above the simulation",
+  "crates/oblivion_host/src/world_view.rs::tangent_space": "the host's presentation of the function's result (a host substitution), above the simulation",
+  "crates/oblivion_pathing/src/cost.rs::actor_point_cost": "the pathing crate's part of the function; the simulation crate sits above it",
+  "crates/oblivion_sim/src/bs/effect_textures.rs::EffectTextureGlobals::stage_texture": "method of EffectTextureGlobals, which is filed here; it moves only with its type",
+  "crates/oblivion_sim/src/bs/fade_node.rs::bound_extra_top": "its body uses bs::fade_node, above its class's home (gamebryo/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/bs/fade_node.rs::set_collision_object": "its body uses bs::havok_stream, above its class's home (gamebryo/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/bs/havok_world.rs::add_collision_callback": "bs/havok_world.rs calls it from below its class's home (tes::world::tes); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/bs/havok_world.rs::mark_collision_for_sync": "its body uses bs::reference_tasks, above its class's home (gamebryo/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/bs/havok_world.rs::remove_collision_from_world": "its body uses bs::reference_tasks, above its class's home (gamebryo/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/bs/havok_world.rs::set_motion_type": "its body uses bs::reference_tasks, above its class's home (gamebryo/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/bs/havok_world.rs::visit_collision_objects": "its body uses bs::havok_world, above its class's home (gamebryo/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/bs/nif_objects.rs::load_bsx_flags": "the BSXFlags load; the database names the shared body NiSphere_LoadBinary_0, so the heading carries that name",
+  "crates/oblivion_sim/src/bs/ragdoll.rs::apply_root_transform": "its body uses bs::havok_world, above its class's home (gamebryo/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/bs/ragdoll.rs::blend_collision": "its body uses bs::havok_stream, above its class's home (gamebryo/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/bs/ragdoll.rs::root_blend_collision": "its body uses bs::ragdoll, above its class's home (gamebryo/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/bs/scene_graphs.rs::attach_scene_child": "its body uses bs::scene_graphs, above its class's home (gamebryo/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/bs/scene_graphs.rs::detach_scene_child": "OWED: second port in the owed group 0070B120 (tools/placement_baseline.json); it moves when that merge is done",
+  "crates/oblivion_sim/src/bs/shader_classes_common.rs::append_default_stage": "its body uses bs::shader, above its class's home (gamebryo/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/bs/shader_classes_common.rs::pixel_target": "bs/shader_classes_geometry.rs calls it from below its class's home (tes::os::renderer_init); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/bs/shader_classes_common.rs::push_stage": "its body uses bs::shader, above its class's home (gamebryo/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/bs/shader_classes_common.rs::stage_defaults": "its body uses bs::shader, above its class's home (gamebryo/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/bs/shader_classes_common.rs::stage_filter": "its body uses bs::shader, above its class's home (gamebryo/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/bs/task_manager.rs::TaskGlobals::construct_io_manager": "arm of 00441970 TES_Constructor that builds this type's singletons",
+  "crates/oblivion_sim/src/bs/task_manager.rs::TaskGlobals::construct_model_loader": "arm of 00441970 TES_Constructor that builds this type's singletons",
+  "crates/oblivion_sim/src/gamebryo/dx9_system.rs::Dx9SystemDesc::adapter": "method of Dx9SystemDesc, which is filed here; it moves only with its type",
+  "crates/oblivion_sim/src/gamebryo/dx9_system.rs::dx9_frame_buffer_format": "gamebryo/dx9_system.rs calls it from below its class's home (tes::os::renderer_init); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/gamebryo/extra_data.rs::BsBound::corner": "method of BsBound, which is filed here; it moves only with its type",
+  "crates/oblivion_sim/src/gamebryo/extra_data.rs::decode_bound_payload": "gamebryo/factory_payload.rs calls it from below its class's home (bs::nif_objects); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/gamebryo/extra_data.rs::decode_furniture_marker_payload": "gamebryo/factory_payload.rs calls it from below its class's home (bs::nif_objects); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/gamebryo/properties.rs::FogProperty::set_start_fraction": "method of the property type gamebryo's stream code builds; the type moving to bs/ would turn gamebryo's calls upward",
+  "crates/oblivion_sim/src/gamebryo/properties.rs::LightingProperty::first_light": "method of the property type gamebryo's stream code builds; the type moving to bs/ would turn gamebryo's calls upward",
+  "crates/oblivion_sim/src/gamebryo/properties.rs::LightingProperty::next_light": "method of the property type gamebryo's stream code builds; the type moving to bs/ would turn gamebryo's calls upward",
+  "crates/oblivion_sim/src/gamebryo/registration.rs::NiFactoryRegistry::register_winmain_bs_factories": "method of NiFactoryRegistry, which is filed here; it moves only with its type",
+  "crates/oblivion_sim/src/gamebryo/renderer.rs::pixel_shader_target": "bs/shader_classes_common.rs calls it from below its class's home (tes::os::renderer_init); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/gamebryo/renderer.rs::shader_package": "bs/shader_manager.rs calls it from below its class's home (tes::os::renderer_init); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/gamebryo/renderer.rs::vertex_shader_target": "bs/shader_classes_common.rs calls it from below its class's home (tes::os::renderer_init); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/gamebryo/search_path.rs::StreamSearchPath::next_search_path": "method of StreamSearchPath, which is filed here; it moves only with its type",
+  "crates/oblivion_sim/src/tes/actors/actor_enable.rs::find_skin_shade_property": "its body uses tes::actors::actor_enable, above its class's home (gamebryo/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/actors/actor_enable.rs::find_skin_shade_property_recursive": "its body uses bs::sky_shader, above its class's home (gamebryo/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/actors/actor_enable.rs::skin_shade_property": "its body uses bs::sky_shader, above its class's home (gamebryo/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/actors/actor_movement_update.rs::ActorVisibilityFrustum::default": "method of ActorVisibilityFrustum, which is filed here; it moves only with its type",
+  "crates/oblivion_sim/src/tes/actors/actor_movement_update.rs::node_is_in_actor_frustum": "its body uses bs::scene_graphs, above its class's home (gamebryo/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/actors/actor_movement_update.rs::update_listener_attack_flag": "its body uses tes::actors::anim_group, above its class's home (bs/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/actors/actor_process_moves.rs::save_load_active_on": "OWED: one of five ports of 0045A500 TESSaveLoadGame_TestCurrentThreadActiveFlag; they differ in what a null g_saveLoadGame does, so the merge needs the exe read (tools/placement_baseline.json)",
+  "crates/oblivion_sim/src/tes/actors/biped_attach.rs::rebind_creature_body_skin": "its body uses bs::model_loader, above its class's home (gamebryo/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/actors/biped_attach.rs::release_collision_objects": "its body uses bs::havok_stream, above its class's home (gamebryo/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/actors/biped_attach.rs::set_body_collision_enabled": "its body uses bs::havok_stream, above its class's home (gamebryo/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/actors/character_3d.rs::queue_animation_files": "its body uses tes::actors::actor, above its class's home (bs/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/actors/character_3d.rs::queue_creature_animation_files": "its body uses tes::actors::actor, above its class's home (bs/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/actors/character_controller.rs::set_collision_layer": "OWED: second port in the owed group 0089F4D0 (tools/placement_baseline.json); it moves when that merge is done",
+  "crates/oblivion_sim/src/tes/actors/idle_select.rs::MenuInputAnswers::active": "answers 0057C140 from the snapshot the interface took, where the caller holds no TileEngine",
+  "crates/oblivion_sim/src/tes/actors/mobile_move.rs::controller_integrate": "its body uses tes::actors::mobile_move, above its class's home (bs/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/ai/ai_process.rs::AiArms::menu_input_active": "the AI arms' hook for 0057C140; the one body is in interface_manager.rs",
+  "crates/oblivion_sim/src/tes/data/reference_load.rs::model_loader_queue_reference": "its body uses tes::actors::player, above its class's home (bs/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/data/reference_load.rs::queue_model_for_reference": "its body uses tes::actors::actor, above its class's home (bs/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/data/reference_load.rs::queue_reference_task": "its body uses tes::actors::character_3d, above its class's home (bs/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/data/resource_purge.rs::purge_after_loading": "tes/menus/loading_menu.rs calls it from below its class's home (tes::winmain); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/data/save_files.rs::SaveFile::caption": "the save row's text as a method of SaveFile; the menu's arm calls it",
+  "crates/oblivion_sim/src/tes/data/save_files.rs::SaveFile::detail_text": "the save row's text as a method of SaveFile; the menu's arm calls it",
+  "crates/oblivion_sim/src/tes/forms/form_arms.rs::DataLoadHost::apply_archive_cache_settings": "host seam of the data load: the trait method stands for the original it forwards to",
+  "crates/oblivion_sim/src/tes/forms/form_arms.rs::DataLoadHost::find_file": "host seam of the data load: the trait method stands for the original it forwards to",
+  "crates/oblivion_sim/src/tes/forms/form_arms.rs::DataLoadHost::find_matching_files": "host seam of the data load: the trait method stands for the original it forwards to",
+  "crates/oblivion_sim/src/tes/forms/form_arms.rs::DataLoadHost::find_texture_entry": "host seam of the data load: the trait method stands for the original it forwards to",
+  "crates/oblivion_sim/src/tes/forms/form_arms.rs::DataLoadHost::read_data_file": "host seam of the data load: the trait method stands for the original it forwards to",
+  "crates/oblivion_sim/src/tes/forms/form_arms.rs::DataLoadHost::section_progress": "host seam of the data load: the trait method stands for the original it forwards to",
+  "crates/oblivion_sim/src/tes/forms/form_arms.rs::DataLoadHost::warnings_log_path": "host seam of the data load: the trait method stands for the original it forwards to",
+  "crates/oblivion_sim/src/tes/forms/forms_actors.rs::save_load_active": "OWED: one of five ports of 0045A500 TESSaveLoadGame_TestCurrentThreadActiveFlag; they differ in what a null g_saveLoadGame does, so the merge needs the exe read (tools/placement_baseline.json)",
+  "crates/oblivion_sim/src/tes/forms/forms_ai.rs::describe": "its body uses tes::forms::form, above its class's home (bs/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/forms/forms_references.rs::save_load_active": "OWED: one of five ports of 0045A500 TESSaveLoadGame_TestCurrentThreadActiveFlag; they differ in what a null g_saveLoadGame does, so the merge needs the exe read (tools/placement_baseline.json)",
+  "crates/oblivion_sim/src/tes/forms/forms_references.rs::set_reference_base_form": "its body uses tes::actors::actor, above its class's home (gamebryo/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/interface/faders.rs::node_set_children_material_alpha": "its body uses bs::sky_shader, above its class's home (gamebryo/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/interface/interface_draw.rs::compose": "OWED: second port in the owed group 00707370 (tools/placement_baseline.json); it moves when that merge is done",
+  "crates/oblivion_sim/src/tes/interface/tile.rs::InterfaceHost::main_menu_ctor_media": "host seam of the interface: the trait method stands for the original it forwards to",
+  "crates/oblivion_sim/src/tes/interface/tile.rs::InterfaceHost::main_menu_destructor_media": "host seam of the interface: the trait method stands for the original it forwards to",
+  "crates/oblivion_sim/src/tes/interface/tile.rs::InterfaceHost::new_game_music": "host seam of the interface: the trait method stands for the original it forwards to",
+  "crates/oblivion_sim/src/tes/interface/tile.rs::InterfaceHost::quit_game": "host seam of the interface: the trait method stands for the original it forwards to",
+  "crates/oblivion_sim/src/tes/interface/tile.rs::InterfaceHost::resume_game_sounds_after_loading": "host seam of the interface: the trait method stands for the original it forwards to",
+  "crates/oblivion_sim/src/tes/interface/tile.rs::InterfaceHost::save_file_list": "host seam of the interface: the trait method stands for the original it forwards to",
+  "crates/oblivion_sim/src/tes/interface/tile.rs::InterfaceHost::start_game": "host seam of the interface: the trait method stands for the original it forwards to",
+  "crates/oblivion_sim/src/tes/menus/hud_reticle.rs::player_is_sneaking": "OWED: second port in the owed group 005E0550 (tools/placement_baseline.json); it moves when that merge is done",
+  "crates/oblivion_sim/src/tes/menus/inventory_menu.rs::InventoryMenu::has_required_tiles": "method of InventoryMenu, which is filed here; it moves only with its type",
+  "crates/oblivion_sim/src/tes/menus/magic_popup_menu.rs::MagicPopupMenu::has_required_tiles": "method of MagicPopupMenu, which is filed here; it moves only with its type",
+  "crates/oblivion_sim/src/tes/menus/race_sex_menu.rs::race_sex_menu_drain_through_stage": "its body uses tes::menus::loading_menu, above its class's home (bs/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/menus/save_menu.rs::SaveMenu::set_field": "method of SaveMenu, which is filed here; it moves only with its type",
+  "crates/oblivion_sim/src/tes/os/os_sound_music.rs::ScriptMusic::cell_music": "host seam for the music arms of 0066EAF0 PlayerCharacter_MoveToCell",
+  "crates/oblivion_sim/src/tes/os/os_sound_music.rs::ScriptMusic::intro_music": "host seam for the music arms of 0066EAF0 PlayerCharacter_MoveToCell",
+  "crates/oblivion_sim/src/tes/os/shader_system.rs::blur_shader_apply_parameters": "its body uses tes::os::shader_system, above its class's home (bs/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/os/shader_system.rs::get_hit_shader_apply_parameters": "its body uses tes::os::shader_system, above its class's home (bs/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/winmain/mod.rs::blend_version_file": "its body uses tes::winmain, above its class's home (tes::settings/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/winmain/mod.rs::load_main_thread_stream": "its body uses tes::winmain::winmain_host, above its class's home (bs/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/winmain/mod.rs::model_drain": "its body uses tes::winmain, above its class's home (bs/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/winmain/winmain_host.rs::SharedFiles::find_file": "the WinMain host's implementation of the file seam",
+  "crates/oblivion_sim/src/tes/winmain/winmain_host.rs::SharedFiles::open_as_bs_file": "the WinMain host's implementation of the file seam",
+  "crates/oblivion_sim/src/tes/winmain/winmain_host.rs::SharedFiles::open_core": "the WinMain host's implementation of the file seam",
+  "crates/oblivion_sim/src/tes/winmain/winmain_memory.rs::StartupMemoryState::enable_object_load_callbacks": "arm of 00441970 TES_Constructor on the startup memory state",
+  "crates/oblivion_sim/src/tes/winmain/winmain_menu_media.rs::main_menu_ctor_media": "its body uses tes::winmain, above its class's home (tes::menus/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/world/cell_havok.rs::bhk_accumulate_frame_time": "its body uses tes::world::tes, above its class's home (bs/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/world/cell_havok.rs::drain_door_havok_add_queue": "its body uses tes::actors::actor, above its class's home (bs/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/world/cell_havok.rs::tree_has_moving_body": "its body uses bs::havok_stream, above its class's home (gamebryo/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/world/light_3d.rs::lit_flame_node": "its body uses bs::fade_node, above its class's home (gamebryo/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/world/path_search.rs::ActorSearchHost::connection_vetoed": "the pathing crate's host seam, answered from the world",
+  "crates/oblivion_sim/src/tes/world/path_search.rs::ActorSearchHost::reference_height": "the pathing crate's host seam, answered from the world",
+  "crates/oblivion_sim/src/tes/world/path_search.rs::ActorSearchHost::reference_in_interior": "the pathing crate's host seam, answered from the world",
+  "crates/oblivion_sim/src/tes/world/reference_3d.rs::finish_on_main_thread": "its body uses tes::actors::character_3d, above its class's home (bs/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/world/reference_3d.rs::finish_reference_task": "its body uses tes::forms::forms_references, above its class's home (bs/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/world/reference_3d.rs::flame_nodes_on": "its body uses tes::data::data_handler, above its class's home (gamebryo/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/world/reference_3d.rs::mark_collision_for_sync": "its body uses bs::havok_stream, above its class's home (gamebryo/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/world/reference_3d.rs::preload_flame_models": "its body uses tes::data::data_handler, above its class's home (bs/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/world/reference_3d.rs::set_geometry_classifier": "its body uses bs::sky_shader, above its class's home (gamebryo/); filing it there would add an upward dependency",
+  "crates/oblivion_sim/src/tes/world/tes_grid.rs::save_load_active": "OWED: one of five ports of 0045A500 TESSaveLoadGame_TestCurrentThreadActiveFlag; they differ in what a null g_saveLoadGame does, so the merge needs the exe read (tools/placement_baseline.json)"
+ }
+}

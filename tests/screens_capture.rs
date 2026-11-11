@@ -13,7 +13,7 @@ fn the_menu_capture_writes_a_full_size_picture() {
     std::fs::create_dir_all(&folder).unwrap();
     let path = folder.join("menu.png");
     let data = std::env::var_os("OBLIVION_DATA_DIR").unwrap();
-    let output = Command::new(env!("CARGO_BIN_EXE_OblivionRecompBevy"))
+    let output = Command::new(env!("CARGO_BIN_EXE_oblivion"))
         .env("OBLIVION_DATA_DIR", data)
         .arg("--ini")
         .arg(Path::new(env!("CARGO_MANIFEST_DIR")).join("fixtures/config/Oblivion.ini"))
@@ -47,7 +47,7 @@ fn the_menu_capture_holds_the_movie_frame_it_names() {
     );
     let folder = std::env::temp_dir().join(format!("recomp_capture_frame_{}", std::process::id()));
     std::fs::create_dir_all(&folder).unwrap();
-    let output = Command::new(env!("CARGO_BIN_EXE_OblivionRecompBevy"))
+    let output = Command::new(env!("CARGO_BIN_EXE_oblivion"))
         .env(
             "OBLIVION_DATA_DIR",
             std::env::var_os("OBLIVION_DATA_DIR").unwrap(),
